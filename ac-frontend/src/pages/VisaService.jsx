@@ -3,11 +3,11 @@ import HeroSection from "../components/service/visa-service/HeroSection";
 import Welcome from "../components/service/visa-service/Welcome";
 import Contact from "../components/service/visa-service/Contact";
 import Statistics from "../components/service/visa-service/Statistics";
-import Europe from "../components/service/visa-service/Countries/Europe";
-import SouthAsia from "../components/service/visa-service/Countries/SouthAsia";
-import MiddleEast from "../components/service/visa-service/Countries/MiddleEast";
-import EastAsia from "../components/service/visa-service/Countries/EastAsia";
-import SouthEastAsia from "../components/service/visa-service/Countries/SouthEastAsia";
+import Europe from "../components/service/visa-service/countries/Europe";
+import SouthAsia from "../components/service/visa-service/countries/SouthAsia";
+import MiddleEast from "../components/service/visa-service/countries/MiddleEast";
+import EastAsia from "../components/service/visa-service/countries/EastAsia";
+import SouthEastAsia from "../components/service/visa-service/countries/SouthEastAsia";
 // import Testimonials from "../components/Services/Visa-Service/Testimonials";
 
 const VisaService = () => {
