@@ -8,7 +8,7 @@ import { FaGraduationCap } from "react-icons/fa6";
 import { FaUserTie } from "react-icons/fa6";
 import { BiSupport } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import Slider from "../Contact/Slider";
+import Slider from "../contact/Slider";
 
 const contacts = [
   {
