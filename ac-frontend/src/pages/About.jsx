@@ -1,11 +1,11 @@
 import React from "react";
 // import HeroSection from "../components/About/HeroSection";
-import Welcome from "../components/About/Welcome";
-import Goal from "../components/About/Goal";
-import Journey from "../components/About/Journey";
-import Values from "../components/About/Values";
-import Initiatives from "../components/About/Initiatives";
-import Message from "../components/About/Message";
+import Welcome from "../components/about/Welcome";
+import Goal from "../components/about/Goal";
+import Journey from "../components/about/Journey";
+import Values from "../components/about/Values";
+import Initiatives from "../components/about/Initiatives";
+import Message from "../components/about/Message";
 
 const About = () => {
   return (

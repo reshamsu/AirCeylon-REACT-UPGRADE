@@ -1,7 +1,7 @@
 import React from "react";
-import Info from "../components/Contact/Info";
-import Form from "../components/Contact/Form";
-import FAQ from "../components/Contact/FAQs";
+import Info from "../components/contact/Info";
+import Form from "../components/contact/Form";
+import FAQ from "../components/contact/FAQs";
 
 const Home = () => {
   return (
