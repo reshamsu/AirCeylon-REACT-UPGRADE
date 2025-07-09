@@ -45,8 +45,8 @@ function App() {
             element={<TransitionSupport />}
           />
           <Route path="/services/notarization" element={<Notarization />} />
-          <Route path="/contact-us" element={<Contact />} />
-          <Route path="/about-us" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
 
           {/* <Route path="/services/travels-tours" element={<TravelTours />} />

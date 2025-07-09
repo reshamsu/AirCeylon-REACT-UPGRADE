@@ -40,8 +40,8 @@ const ContactInfo = () => {
       <div className="contact-info">
         <Container className="container">
           <div className="container-fluid">
-            <h1>
-              Get <span className="gradient-text">Connected.</span>
+            <h1 className="font-semibold items-center">
+              Get <span>Connected.</span>
             </h1>
             <p>
               We're here to assist you with any inquires about our solutions

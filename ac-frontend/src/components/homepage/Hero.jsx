@@ -1,28 +1,24 @@
 import React from "react";
-import { Container } from "@mui/material";
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
 import hero from "../../assets/check.jpg";
 
 const Hero = () => {
   return (
-    <div className="hero-section">
-      <div className="homepage-overlay">
-        <img src={hero} className="homepage darkened" />
-
-        {/* <img
-          src="./assets/Watermark.png"
-          className="watermark"
-          alt="Watermark"
-        /> */}
+    <div className="relative w-full text-white">
+      {/* Background image with overlay */}
+      <div className="absolute inset-0">
+        <img
+          src={hero}
+          alt="Air Ceylon Hero"
+          className="w-full h-full object-cover brightness-30"
+        />
       </div>
 
-      <Container className="landing-hero">
-        <div className="container-fluid">
-          <h1 className="font-bold">
-            Beyond <span className="gradient-text">Travelling</span>
-          </h1>
-        </div>
-      </Container>
+      {/* Overlay content */}
+      <div className="relative z-10 flex items-center justify-center h-[50vh] md:h-[90vh] px-4 text-center">
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold leading-tight">
+          Beyond Traveling
+        </h1>
+      </div>
     </div>
   );
 };

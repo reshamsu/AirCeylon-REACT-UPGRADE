@@ -1,7 +1,4 @@
 import React from "react";
-import { Container } from "@mui/material";
-
-// Import images properly from src/assets
 import partnerships from "../../assets/partnerships.png";
 import standards from "../../assets/standards.png";
 import experience from "../../assets/experience.png";
@@ -9,74 +6,59 @@ import travelHub from "../../assets/travel-hub.png";
 
 const Analytics = () => {
   return (
-    <div className="landing-stats">
-      <Container className="container">
-        <div className="container-fluid">
-          <label>Our Expertise</label>
-          <h1>
-            Your Journey, <span className="gradient-text">Our Responsibility.</span>
-          </h1>
-          <h4>Navigating Your Experience with Confidence and Ease</h4>
-        </div>
+    <div className="landing-stats text-white px-4 py-10 bg-black/90">
+      <div className="max-w-[1240px] mx-auto text-center">
+        <p className="text-[#c89238] font-bold text-xl">OUR EXPERTISE</p>
+        <h1 className="md:text-5xl sm:text-4xl text-3xl font-bold my-4">
+          Your Journey, Our Responsibility.
+        </h1>
+        <h4 className="md:text-2xl text-xl font-semibold my-4">
+          Navigating Your Experience with Confidence and Ease
+        </h4>
 
-        <div className="container-lg">
-          <div className="card">
-            <div className="card-body">
-              <div className="card-group">
-                <img src={partnerships} alt="Expert Partnerships" />
-                <h2>Expert Partnerships</h2>
-              </div>
-              <div className="card-text">
-                <p>
-                  Trusted Licensed Professionals to ensure Your Experience is in the Best of Hands.
-                </p>
-              </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 pt-10">
+          <div className="bg-white/2 shadow-lg rounded-xl p-6 hover:scale-105 transition-transform ease-in-out duration-300 flex items-center justify-center">
+            <div className="flex flex-col items-center">
+              <img className="w-[100px] mb-4" src={partnerships} alt="Expert Partnerships" />
+              <h2 className="text-xl font-semibold mb-2">Expert Partnerships</h2>
+              <p className="text-sm text-gray-300">
+                Trusted Licensed Professionals to ensure Your Experience is in the Best of Hands.
+              </p>
             </div>
           </div>
 
-          <div className="card">
-            <div className="card-body">
-              <div className="card-group">
-                <img src={standards} alt="Exceeding Standards" />
-                <h2>Exceeding Standards</h2>
-              </div>
-              <div className="card-text">
-                <p>
-                  Commitment to High Quality Service & Support Beyond the Boundaries by Flying the Extra Mile for You.
-                </p>
-              </div>
+          <div className="bg-white/2 shadow-lg rounded-2xl p-6 hover:scale-105 transition-transform ease-in-out duration-300 flex items-center justify-center">
+            <div className="flex flex-col items-center">
+              <img className="w-[100px] mb-4" src={standards} alt="Exceeding Standards" />
+              <h2 className="text-xl font-semibold mb-2">Exceeding Standards</h2>
+              <p className="text-sm text-gray-300">
+                Commitment to High Quality Service & Support Beyond the Boundaries by Flying the Extra Mile for You.
+              </p>
             </div>
           </div>
 
-          <div className="card">
-            <div className="card-body">
-              <div className="card-group">
-                <img src={experience} alt="Effortless Experience" />
-                <h2>Effortless Experience</h2>
-              </div>
-              <div className="card-text">
-                <p>
-                  Dedicated to Implementing a Smart, Easy, Simple & Seamless Experience as much as Your Journey.
-                </p>
-              </div>
+          <div className="bg-white/2 shadow-lg rounded-2xl p-6 hover:scale-105 transition-transform ease-in-out duration-300 flex items-center justify-center">
+            <div className="flex flex-col items-center">
+              <img className="w-[100px] mb-4" src={experience} alt="Effortless Experience" />
+              <h2 className="text-xl font-semibold mb-2">Effortless Experience</h2>
+              <p className="text-sm text-gray-300">
+                Dedicated to Implementing a Smart, Easy, Simple & Seamless Experience as much as Your Journey.
+              </p>
             </div>
           </div>
 
-          <div className="card">
-            <div className="card-body">
-              <div className="card-group">
-                <img src={travelHub} alt="Exclusive Travel Hub" />
-                <h2>Exclusive Travel Hub</h2>
-              </div>
-              <div className="card-text">
-                <p>
-                  Determined to Provide Exclusive Services All in One Place.
-                </p>
-              </div>
+          <div className="bg-white/2 shadow-lg rounded-2xl p-6 hover:scale-105 transition-transform ease-in-out duration-300 flex items-center justify-center">
+            <div className="flex flex-col items-center">
+              <img className="w-[100px] mb-4" src={travelHub} alt="Exclusive Travel Hub" />
+              <h2 className="text-xl font-semibold mb-2">Exclusive Travel Hub</h2>
+              <p className="text-sm text-gray-300">
+                Determined to Provide Exclusive Services All in One Place.
+              </p>
             </div>
           </div>
         </div>
-      </Container>
+      </div>
     </div>
   );
 };

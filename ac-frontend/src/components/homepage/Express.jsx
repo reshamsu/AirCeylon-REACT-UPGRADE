@@ -1,12 +1,10 @@
 import React from "react";
-import { Container, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
-// Import images from src/assets
+// Import images
 import express1 from "../../assets/express1.png";
 import express2 from "../../assets/express2.png";
 import express3 from "../../assets/express3.png";
-import thunder from "../../assets/express3.png";
 
 const expressOptions = [
   {
@@ -32,55 +30,46 @@ const expressOptions = [
 
 const Express = () => {
   return (
-    <div className="landing-express" style={{ padding: "2rem 0" }}>
-      <Container>
-        <div className="container-fluid">
-          <label>Express</label>
-          <h1>
-            Express <span className="gradient-text">Lane</span>
-          </h1>
-        </div>
+    <div className="bg-[linen] text-black px-4 py-16">
+      <div className="max-w-[1240px] mx-auto text-center">
+        <p className="text-[#a87c47] font-bold text-xl">EXPRESS</p>
+        <h1 className="md:text-5xl sm:text-4xl text-3xl font-bold my-4">
+          Express Lane
+        </h1>
 
-        <div className="container-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 pt-12">
           {expressOptions.map((item, index) => (
-            <div className="card" key={index}>
-              <div className="card-body">
-                {item.iconPng && (
-                  <img
-                    src={item.iconPng}
-                    alt={item.button}
-                    style={{ width: "44%", marginBottom: "1rem" }}
-                  />
-                )}
+            <div
+              key={index}
+              className="bg-transparent rounded-3xl p-10 flex flex-col items-center text-center hover:shadow-xl transition"
+            >
+              {item.iconPng && (
+                <img
+                  src={item.iconPng}
+                  alt={item.button}
+                  className="w-[120px] mb-4"
+                />
+              )}
 
-                <div className="caller">
-                  {item.phone ? (
-                    <a
-                      href={`tel:${item.phone}`}
-                      style={{ textDecoration: "none" }}
-                    >
-                      <Button variant="contained" className="btn btn-primary">
-                        {item.button}
-                      </Button>
-                    </a>
-                  ) : (
-                    <Button
-                      variant="contained"
-                      className="btn btn-primary"
-                      component={Link}
-                      to={item.direct}
-                    >
-                      {item.button}
-                    </Button>
-                  )}
+              <h4 className="text-lg font-semibold mb-4">{item.title}</h4>
 
-                  <h4 className="card-title">{item.title}</h4>
-                </div>
-              </div>
+              {item.phone ? (
+                <a href={`tel:${item.phone}`} className="w-full">
+                  <button className="bg-[#a87c47] hover:bg-[#966a3a] w-full rounded-2xl font-semibold text-lg py-3 text-white transition">
+                    {item.button}
+                  </button>
+                </a>
+              ) : (
+                <Link to={item.direct || "#"} className="w-full">
+                  <button className="bg-[#a87c47] hover:bg-[#966a3a] w-full rounded-2xl font-semibold text-lg py-3 text-white transition">
+                    {item.button}
+                  </button>
+                </Link>
+              )}
             </div>
           ))}
         </div>
-      </Container>
+      </div>
     </div>
   );
 };

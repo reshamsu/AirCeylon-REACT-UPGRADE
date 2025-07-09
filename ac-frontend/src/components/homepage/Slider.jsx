@@ -68,12 +68,12 @@ const Gallery = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 600,
+    speed: 800,
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     autoplay: true,
     autoplaySpeed: 8000,
-    arrows: true,
+    arrows: false,
     swipe: true,
     touchMove: true,
     draggable: true,
@@ -96,27 +96,26 @@ const Gallery = () => {
   };
 
   return (
-    <div className="landing-slider">
-      <Container id="destinations" style={{ padding: "3rem 0" }}>
-        <div className="container-fluid">
-          <label>Destinations</label>
-          <h1>
-            Your Next <span className="gradient-text">Journey Awaits</span>
+    <div className="w-full bg-white py-16 px-8"  id="destinations">
+      <div
+        className="max-w-[1240px] mx-auto"
+       
+      >
+        <div className="px-6">
+          <p className="text-[#a87c47] font-bold text-xl">DESTINATIONS</p>
+          <h1 className="md:text-5xl sm:text-4xl text-3xl font-bold my-4">
+            Your Next Journey Awaits
           </h1>
         </div>
 
         <Slider {...settings}>
           {attractions.map((item, index) => (
-            <div
-              key={index}
-              style={{ padding: "0 10px", boxSizing: "border-box" }}
-            >
+            <div key={index}>
               <div
                 className="slide-card"
                 style={{
                   background: "#fff",
                   overflow: "hidden",
-                  height: "100%",
                   margin: "1rem",
                 }}
               >
@@ -171,7 +170,7 @@ const Gallery = () => {
             </div>
           ))}
         </Slider>
-      </Container>
+      </div>
     </div>
   );
 };
