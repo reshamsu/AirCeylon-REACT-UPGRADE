@@ -33,7 +33,7 @@ const Express = () => {
     <div className="bg-[linen] text-black px-4 py-16">
       <div className="max-w-[1240px] mx-auto text-center">
         <p className="text-[#a87c47] font-bold text-xl">EXPRESS</p>
-        <h1 className="md:text-5xl sm:text-4xl text-3xl font-bold my-4">
+        <h1 className="md:text-5xl sm:text-4xl text-3xl font-bold my-2">
           Express Lane
         </h1>
 

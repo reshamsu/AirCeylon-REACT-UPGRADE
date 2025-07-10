@@ -11,8 +11,8 @@ const Navbar = () => {
   const toggleNav = () => setNavOpen(!navOpen);
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50 p-2">
-      <div className="max-w-[1240px] mx-auto px-10 flex justify-between items-center h-20">
+    <nav className="bg-white shadow-md sticky top-0 z-50 p-1.5">
+      <div className="max-w-[1240px] mx-auto px-8 flex justify-between items-center h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <img src={logo} alt="Air Ceylon Logo" className="w-12 mr-2" />

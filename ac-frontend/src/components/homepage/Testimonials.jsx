@@ -22,9 +22,9 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <div className="bg-black/90 text-white py-16 px-4">
+    <div className="bg-white text-black py-16 px-4">
       <div className="max-w-[1240px] mx-auto">
-        <div className="text-center mb-14">
+        <div className="text-center mb-12">
           <p className="text-[#a87c47] font-bold text-xl">TESTIMONIALS</p>
           <h1 className="text-2xl md:text-5xl font-bold flex justify-center items-center gap-4 my-4">
             Experience with Air Ceylon
@@ -32,7 +32,7 @@ const Testimonials = () => {
           </h1>
         </div>
 
-        <div className="grid gap-10 md:grid-cols-3 my-10">
+        <div className="grid gap-10 md:grid-cols-3 m-6">
           {testimonials.map((item, index) => (
             <div
               key={index}
@@ -41,12 +41,12 @@ const Testimonials = () => {
               <p className="text-xl text-[#c89238] font-medium tracking-wide">
                 {item.label}
               </p>
-              <div className="text-sm leading-relaxed relative">
+              <div className="text-[14px] leading-relaxed relative">
                 <FaQuoteLeft className="inline-block text-[#a87c47] mr-1" size={20} />
                 {item.text}
                 <FaQuoteRight className="inline-block text-[#a87c47] ml-1" size={20}/>
               </div>
-              <p className="text-gray-300 text-sm mt-2">{item.author}</p>
+              <p className="text-shadow-black text-sm mt-2">{item.author}</p>
             </div>
           ))}
         </div>

@@ -1,8 +1,8 @@
 import React from "react";
-import HeroSection from "../components/service/visa-service/HeroSection";
+import Hero from "../components/service/visa-service/Hero";
 import Welcome from "../components/service/visa-service/Welcome";
 import Contact from "../components/service/visa-service/Contact";
-import Statistics from "../components/service/visa-service/Statistics";
+import Analytics from "../components/service/visa-service/Analytics";
 import Europe from "../components/service/visa-service/countries/Europe";
 import SouthAsia from "../components/service/visa-service/countries/SouthAsia";
 import MiddleEast from "../components/service/visa-service/countries/MiddleEast";
@@ -13,10 +13,10 @@ import SouthEastAsia from "../components/service/visa-service/countries/SouthEas
 const VisaService = () => {
   return (
     <>
-      <HeroSection />
+      <Hero />
       <Welcome />
       <Contact />
-      <Statistics />
+      <Analytics />
       <Europe />
       <EastAsia />      
       <MiddleEast />

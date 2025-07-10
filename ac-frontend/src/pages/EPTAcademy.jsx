@@ -1,5 +1,5 @@
 import React from "react";
-import HeroSection from "../components/service/ept-academy/HeroSection";
+import Hero from "../components/service/ept-academy/Hero";
 import Welcome from "../components/service/ept-academy/Welcome";
 import Monologue from "../components/service/ept-academy/Monologue";
 import Packages from "../components/service/ept-academy/Packages";
@@ -10,7 +10,7 @@ import Contact from "../components/service/ept-academy/Contact";
 const EPTAcademy = () => {
   return (
     <>
-      <HeroSection />
+      <Hero />
       <Welcome />
       <Monologue />
       <Packages />
