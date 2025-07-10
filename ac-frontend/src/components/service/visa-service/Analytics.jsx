@@ -10,8 +10,8 @@ const Analytics = () => {
     <div className="text-white px-4 py-20 bg-black/90">
       <div className="max-w-[1240px] mx-auto text-center">
         <p className="text-[#c89238] font-bold text-xl">OUR EXPERTISE</p>
-        <h1 className="md:text-5xl sm:text-4xl text-3xl font-bold my-4 pb-6">
-          Our Visa Expertise
+        <h1 className="md:text-5xl sm:text-4xl text-3xl font-bold my-4 pb-4">
+          Our VISA <span className="text-[#c89238]">Expertise</span>
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 pt-6 m-6">

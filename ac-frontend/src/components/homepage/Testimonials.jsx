@@ -26,8 +26,8 @@ const Testimonials = () => {
       <div className="max-w-[1240px] mx-auto">
         <div className="text-center mb-12">
           <p className="text-[#a87c47] font-bold text-xl">TESTIMONIALS</p>
-          <h1 className="text-2xl md:text-5xl font-bold flex justify-center items-center gap-4 my-4">
-            Experience with Air Ceylon
+          <h1 className="text-2xl md:text-4xl font-bold flex justify-center items-center gap-3 my-4">
+            Experience with <span className="text-[#a87c47]">Air Ceylon</span>
             <FaCommentDots className="text-[#a87c47]" size={40}/>
           </h1>
         </div>

@@ -1,25 +1,22 @@
 import React from "react";
-import { Container } from "@mui/material";
 
 const Welcome = () => {
   return (
-    <div className="landing-welcome">
-      <Container className="container">
-        <div className="container-fluid">
-          <label>Welcome</label>
-          <h1>
-            <span className="gradient-text">Notarization</span>
-          </h1>
-          <p>
-            We understand the importance of verifying your documents before you
-            embark onto a new opportunity in a new city.
-          </p>
-          <p>
-            Be stress-free and confident with our well informed, speedy and
-            reliable Notarization Service.
-          </p>
-        </div>
-      </Container>
+    <div className="relative bg-[linen] text-black py-24 px-4 overflow-hidden">
+      <div className="relative max-w-3xl mx-auto text-center z-10">
+        <p className="text-[#a87c47] font-bold text-xl mb-4">Welcome</p>
+        <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold mb-6">
+          <span className="text-[#a87c47]">Notarization</span>
+        </h1>
+        <p className="text-base sm:text-lg font-sm text-gray-600 px-4">
+          We understand the importance of verifying your documents before you
+          embark onto a new opportunity in a new city.
+        </p>
+        <p className="text-base sm:text-lg font-sm text-gray-600 px-4">
+          Be stress-free and confident with our well informed, speedy and
+          reliable Notarization Service.
+        </p>
+      </div>
     </div>
   );
 };

@@ -51,17 +51,17 @@ const Express = () => {
                 />
               )}
 
-              <h4 className="text-lg font-semibold mb-4">{item.title}</h4>
+              <p className="text-md font-semibold mb-4">{item.title}</p>
 
               {item.phone ? (
                 <a href={`tel:${item.phone}`} className="w-full">
-                  <button className="bg-[#a87c47] hover:bg-[#966a3a] w-full rounded-2xl font-semibold text-lg py-3 text-white transition">
+                  <button className="bg-[#a87c47] hover:bg-[#966a3a] w-full rounded-xl font-semibold text-lg py-3 text-white transition">
                     {item.button}
                   </button>
                 </a>
               ) : (
                 <Link to={item.direct || "#"} className="w-full">
-                  <button className="bg-[#a87c47] hover:bg-[#966a3a] w-full rounded-2xl font-semibold text-lg py-3 text-white transition">
+                  <button className="bg-[#a87c47] hover:bg-[#966a3a] w-full rounded-xl font-semibold text-lg py-3 text-white transition">
                     {item.button}
                   </button>
                 </Link>

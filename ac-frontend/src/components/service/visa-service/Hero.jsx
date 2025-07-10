@@ -15,7 +15,7 @@ const Hero = () => {
           />
         </div>
         <div className="relative z-10 flex items-center justify-center h-[50vh] md:h-[88vh] px-4 text-center">
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
             VISA Service
           </h1>
         </div>

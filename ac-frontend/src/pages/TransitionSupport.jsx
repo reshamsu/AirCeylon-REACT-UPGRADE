@@ -1,16 +1,16 @@
 import React from "react";
-import HeroSection from "../components/service/transition-support/HeroSection";
+import Hero from "../components/service/transition-support/Hero";
 import Welcome from "../components/service/transition-support/Welcome";
-import Stats from "../components/service/transition-support/Stats";
+import Analytics from "../components/service/transition-support/Analytics";
 import Slider from "../components/service/transition-support/Slider";
 import Contact from "../components/service/transition-support/Contact";
 
 const TransitionSupport = () => {
   return (
     <>
-      <HeroSection />
+      <Hero />
       <Welcome />
-      <Stats />
+      <Analytics />
       <Slider />
       <Contact />
     </>

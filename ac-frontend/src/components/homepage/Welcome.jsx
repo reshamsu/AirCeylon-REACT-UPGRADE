@@ -12,13 +12,13 @@ const Welcome = () => {
 
       <div className="relative max-w-3xl mx-auto text-center z-10">
         <p className="text-[#a87c47] font-bold text-xl mb-4">HELLO</p>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+        <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold mb-6">
           Welcome to <span className="text-[#a87c47]">Air Ceylon</span>
         </h1>
-        <p className="md:text-2xl text-xl font-semibold text-gray-900 mb-6">
+        <p className="md:text-xl text-xl font-semibold text-gray-900 mb-6">
           Your journey begins now!
         </p>
-        <p className="text-base sm:text-lg font-medium text-gray-600 px-4">
+        <p className="text-base sm:text-lg font-sm text-gray-600 px-4">
           Explore a world of seamless travel, exceptional service, and boundless
           possibilities. Let every scroll guide you to the destination of your dreams.
         </p>

@@ -42,7 +42,7 @@
 } */
 /* @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"); */
 
-:root {
+/* :root {
   --background-white: #ffffff;
   --background-gradient-gold: linear-gradient(
     90deg,
@@ -65,7 +65,7 @@
   --text-gold-brown: #a87c47;
   --text-gold-hover: #c89238;
   --dark-blue: #19233e;
-}
+} */
 
 /* * {
   box-sizing: border-box;
@@ -76,7 +76,7 @@
   transition: all 0.4s linear;
 } */
 
-html {
+/* html {
   font-size: 90%;
   overflow-x: hidden;
   scroll-padding-top: 6rem;
@@ -88,7 +88,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
-}
+} */
 
 /* .gradient-text-blue {
   background: linear-gradient(90deg, #ffbb00 0%, #ffa500 50%, #ff8c00 100%);
@@ -98,7 +98,7 @@ html {
 } */
 
 /* Media Content  */
-.homepage-overlay {
+/* .homepage-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -124,7 +124,6 @@ html {
   left: 50%;
   transform: translateX(-50%) translateZ(0);
   width: 36%;
-  /* opacity: 0.06; */
   pointer-events: none;
   z-index: 2;
   display: flex;
@@ -133,7 +132,7 @@ html {
   backface-visibility: hidden;
   will-change: transform, opacity;
   contain: layout paint;
-}
+} */
 
 /* Button Content  */
 /* .btn.btn-primary {
@@ -149,7 +148,7 @@ html {
   width: 100%;
 } */
 
-.btn.btn-outline-primary {
+/* .btn.btn-outline-primary {
   font-size: 16px;
   font-weight: 660;
   padding: 0.7rem 1rem;
@@ -210,7 +209,7 @@ html {
 
 .card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+} */
 
 /* Navigation Section  */
 /* header {
@@ -289,7 +288,7 @@ header nav .nav-link-active {
 } */
 
 /* Dropdown Section  */
-span.nav-link.dropdown-toggle {
+/* span.nav-link.dropdown-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -339,10 +338,10 @@ span.nav-link.dropdown-toggle .nav-link-active {
 
 .service-dropdown .service-dropdown-menu .dropdown-item:hover {
   color: var(--text-gold-hover);
-}
+} */
 
 /* SubNav Section  */
-nav.desktop-subnav {
+/* nav.desktop-subnav {
   position: relative;
   padding: 1rem;
   display: block;
@@ -397,10 +396,10 @@ nav.desktop-subnav ul.dropdown-menu li a {
 
 nav.desktop-subnav ul.dropdown-menu li a:hover {
   color: var(--text-gold-hover);
-}
+} */
 
 /* SubNav Section  */
-nav.mobile-subnav {
+/* nav.mobile-subnav {
   position: relative;
   display: none;
   background: var(--background-white);
@@ -450,10 +449,10 @@ nav.mobile-subnav ul.dropdown-menu li a {
 
 nav.mobile-subnav ul.dropdown-menu li a:hover {
   color: var(--text-gold-brown);
-}
+} */
 
 /* SideNav Section  */
-nav.sidenav {
+/* nav.sidenav {
   background-color: var(--background-white);
   padding: 1.8rem 4%;
   min-height: 100vh;
@@ -484,7 +483,6 @@ nav.sidenav .title button {
 
 nav.sidenav .title svg {
   color: var(--text-gold-hover);
-  /* background-color: linen; */
   font-size: 2rem;
   padding: 6px;
   border-radius: 8px;
@@ -570,10 +568,10 @@ nav.sidenav span svg {
 
 .container-fluid p {
   margin-bottom: 1rem;
-}
+} */
 
 /* Landing Sections  */
-.hero-section {
+/* .hero-section {
   min-height: 90vh;
   display: flex;
   justify-content: center;
@@ -596,10 +594,10 @@ nav.sidenav span svg {
 .hero-section p {
   margin: 0.8rem 0;
   color: var(--text-white);
-}
+} */
 
 /* Landing Sections  */
-.landing-welcome,
+/* .landing-welcome,
 .about-welcome {
   min-height: 60vh;
   position: relative;
@@ -646,7 +644,7 @@ nav.sidenav span svg {
   padding: 0.6rem 18px;
   border-radius: 12px;
   margin: 1rem 0;
-}
+} */
 
 /* .landing-welcome .container-fluid h1,
 .about-welcome .container-fluid h1,
@@ -662,7 +660,7 @@ nav.sidenav span svg {
   color: var(--text-black-hover);
 } */
 
-.landing-welcome .container-fluid p,
+/* .landing-welcome .container-fluid p,
 .about-welcome .container-fluid p {
   font-weight: 500;
 }
@@ -685,10 +683,10 @@ nav.sidenav span svg {
   padding-bottom: 0.4rem;
   border-bottom: 4px solid var(--text-gold-hover);
   width: 4%;
-}
+} */
 
 /* Slider Content  */
-.slick-prev:before,
+/* .slick-prev:before,
 .slick-next:before {
   color: var(--text-gold-brown);
   font-size: 30px;
@@ -776,7 +774,6 @@ nav.sidenav span svg {
 }
 
 .landing-brands {
-  /* background: linear-gradient(145deg, #2a2a2a, #111111, #000000); */
   background: linen;
   min-height: 74vh;
   display: flex;
@@ -927,7 +924,6 @@ nav.sidenav span svg {
 .landing-stats .container-lg .card,
 .landing-stats2 .container-lg .card,
 .landing-stats4 .container-lg .card {
-  /* background-color: var(--background-white); */
   width: 100%;
   cursor: pointer;
   padding: 1.8rem 2%;
@@ -1071,7 +1067,6 @@ nav.sidenav span svg {
   width: 36%;
   font-weight: 500;
   border-radius: 12px;
-  /* background: var(--background-white); */
   color: var(--text-gold-hover);
 }
 
@@ -1114,10 +1109,10 @@ nav.sidenav span svg {
   border-radius: 100%;
   background: var(--background-gradient-gold);
   margin-bottom: 1.6rem;
-}
+} */
 
 /* Express Content  */
-.landing-express .container-lg .card {
+/* .landing-express .container-lg .card {
   width: 32%;
   padding: 2rem;
   border-radius: 16px;
@@ -1139,10 +1134,10 @@ nav.sidenav span svg {
   color: var(--text-black-hover);
   font-weight: 600;
   padding-top: 1.4rem;
-}
+} */
 
 /* Testimonials Section  */
-.landing-testimonials,
+/* .landing-testimonials,
 .landing-testimonials2 {
   display: flex;
   align-items: center;
@@ -1216,13 +1211,13 @@ nav.sidenav span svg {
   font-weight: 500;
   margin: 0 0.2rem;
   color: var(--text-gold-hover);
-}
+} */
 
 /* VISA Service Section  */
-.visa-contact {
+/* .visa-contact {
   min-height: 80vh;
   display: flex;
-}
+} */
 
 /* input,
 select,
@@ -1233,7 +1228,7 @@ textarea {
   font-size: 15px;
 } */
 
-.visa-contact .container {
+/* .visa-contact .container {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -1317,7 +1312,6 @@ textarea {
   border-radius: 14px;
   width: 96%;
   display: flex;
-  /* background-color: var(--background-pale); */
   border: 8px solid var(--text-gold-hover);
   box-shadow: 0px 2px 12px rgb(0, 0, 0, 0.4);
 }
@@ -1421,10 +1415,10 @@ textarea {
 .visa-contact .card .btn.btn-primary svg,
 .contact-form .card .btn.btn-primary svg {
   margin-left: 0.6rem;
-}
+} */
 
 /* EPT Academy Section  */
-.ept-monologue {
+/* .ept-monologue {
   background-color: var(--dark-blue);
 }
 
@@ -1538,10 +1532,10 @@ textarea {
 .ept-monologue .container-lg .card .card-body strong {
   color: var(--text-white);
   font-weight: 700;
-}
+} */
 
 /* EPT Packages Section  */
-.ept-packages .container-lg .card {
+/* .ept-packages .container-lg .card {
   background: var(--background-white);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px;
   margin: 0.6rem;
@@ -1656,10 +1650,10 @@ textarea {
 .ept-packages .container-lg .card .card-body .btn.btn-dark svg {
   font-size: 1.2rem;
   margin-left: 0.6rem;
-}
+} */
 
 /* EPT Contact Section  */
-.ept-contact {
+/* .ept-contact {
   background-color: linen;
 }
 
@@ -1707,10 +1701,10 @@ textarea {
 .ept-contact .card-body .card-group .col .btn.btn-primary svg {
   font-size: 1.8rem;
   margin-right: 10px;
-}
+} */
 
 /* Contact Page  */
-.contact-info {
+/* .contact-info {
   position: relative;
   z-index: 2;
   display: flex;
@@ -1722,7 +1716,7 @@ textarea {
   z-index: 2;
   display: flex;
   background: burlywood;
-}
+} */
 
 /* input,
 select,
@@ -1733,7 +1727,7 @@ textarea {
   font-size: 15px;
 } */
 
-.contact-info .container,
+/* .contact-info .container,
 .contact-form .container,
 .contact-section .container {
   display: flex;
@@ -1895,10 +1889,10 @@ textarea {
 
 .faq-section .container .container-lg .card .card-body .card-text p {
   margin-top: 1rem;
-}
+} */
 
 /* About Us Content  */
-.about-welcome .container {
+/* .about-welcome .container {
   display: flex;
   align-items: center;
 }
@@ -2009,7 +2003,6 @@ textarea {
   padding: 3.3rem;
   border-radius: 18px;
   box-shadow: 0 10px 20px rgb(0, 0, 0, 0.6);
-  /* border: 7px solid var(--text-gold-hover); */
   background-color: var(--dark-blue);
 }
 
@@ -2048,10 +2041,10 @@ textarea {
   color: var(--text-gold-hover);
   font-weight: 600;
   font-size: 0.9rem;
-}
+} */
 
 /* About Timeline Section  */
-.timeline-container {
+/* .timeline-container {
   position: relative;
   padding: 40px 20px;
   max-width: 100%;
@@ -2136,10 +2129,10 @@ textarea {
 
 .timeline-block.bottom .timeline-content {
   margin-top: 170px;
-}
+} */
 
 /* Checkout Section  */
-.required {
+/* .required {
   color: red;
   margin-left: 0.25rem;
 }
@@ -2307,7 +2300,7 @@ textarea {
 .checkout-section .card a.btn.btn-dark svg {
   margin-right: 0.6rem;
   font-size: 1.3rem;
-}
+} */
 
 /* Footer Content */
 footer {
@@ -2473,7 +2466,7 @@ footer .footer-content .rights a {
 }
 
 /* Mobile Responsive */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   header {
     padding: 0.8rem 4%;
   }
@@ -2693,11 +2686,6 @@ footer .footer-content .rights a {
     height: fit-content !important;
   }
 
-  /* .landing-stats .container-lg .card-group {
-    align-items: center;
-    margin-bottom: 1.4rem;
-  } */
-
   .landing-stats1 .container-lg .card-group {
     flex-direction: column;
     align-items: center;
@@ -2716,19 +2704,10 @@ footer .footer-content .rights a {
     height: fit-content;
   }
 
-  /* .landing-stats .container-lg .card-body svg {
-    margin-right: 1rem;
-    margin-bottom: 0;
-  } */
-
   .landing-stats1 .container-lg .card-body svg {
     margin: 0;
     margin-bottom: 0.6rem;
   }
-  /* 
-  .landing-stats .container-lg .card-body img {
-    margin: 0;
-  } */
 
   .landing-stats2 .container-lg .card-body img {
     width: 36%;
@@ -2970,13 +2949,6 @@ footer .footer-content .rights a {
   .calendar-booking {
     height: 100pc !important;
   }
-
-  /* .visa-destinations1 .container-fluid h1,
-  .visa-destinations2 .container-fluid h1 {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 1rem;
-  } */
 
   .ept-academy {
     min-height: 50vh;
@@ -4084,10 +4056,6 @@ footer .footer-content .rights a {
     padding: 3rem 8%;
   }
 
-  /* .hero-section {
-    min-height: 86vh;
-  } */
-
   .hero-section .container-fluid {
     padding: 0 4rem;
   }
@@ -4305,4 +4273,4 @@ footer .footer-content .rights a {
     font-size: 13px;
     margin: 0 2rem;
   }
-}
+} */

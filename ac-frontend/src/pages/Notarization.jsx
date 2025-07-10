@@ -1,5 +1,5 @@
 import React from "react";
-import HeroSection from "../components/service/notarization/HeroSection";
+import Hero from "../components/service/notarization/Hero";
 import Definitions from "../components/service/notarization/Definitions";
 import ForWhom from "../components/service/notarization/ForWhom";
 import Documentation from "../components/service/notarization/Documentation";
@@ -10,7 +10,7 @@ import FAQ from "../components/service/notarization/FAQ";
 const Notarization = () => {
   return (
     <>
-      <HeroSection />
+      <Hero />
       <Definitions />
       <ForWhom />
       <Documentation />

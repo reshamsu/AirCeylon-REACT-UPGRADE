@@ -1,5 +1,5 @@
 import React from "react";
-import hero from "../../assets/check.jpg";
+import hero from "../../../assets/transition-support-section.jpg";
 
 const Hero = () => {
   return (
@@ -10,7 +10,7 @@ const Hero = () => {
 
       <div className="relative z-10 flex items-center justify-center h-[50vh] md:h-[90vh] px-4 text-center">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-          Beyond Traveling
+          Transition Support
         </h1>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import HeroSection from "../components/blogs/HeroSection";
+import Hero from "../components/blogs/Hero";
 import News from "../components/blogs/News";
 import Sustainability from "../components/blogs/Sustainability";
 import Brands from "../components/blogs/Brands";
@@ -7,7 +7,7 @@ import Brands from "../components/blogs/Brands";
 const Blog = () => {
   return (
     <>
-      <HeroSection />
+      <Hero />
       <News />
       <Sustainability />
       <Brands />

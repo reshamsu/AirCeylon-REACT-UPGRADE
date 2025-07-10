@@ -36,35 +36,37 @@ const Sustainability = () => {
   ];
 
   return (
-    <div className="landing-stats">
-      <Container className="container">
-        <div className="container-fluid">
-          <label>CSR</label>
-          <h1>
-            Sustainability <span className="gradient-text-blue">Values</span>
-          </h1>
-        </div>
+    <div className="text-white px-4 py-20 bg-black/90">
+      <div className="max-w-[1240px] mx-auto text-center">
+        <p className="text-[#c89238] font-bold text-xl">CSR</p>
+        <h1 className="md:text-5xl sm:text-4xl text-3xl font-bold my-4 pb-4">
+          Sustainability <span className="text-[#c89238]">Values</span>
+        </h1>
 
-        <div className="container-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 pt-6 m-6">
           {cards.map((card, index) => (
-            <div className="card" key={index}>
-              <div className="card-body" style={{ height: "36vh"}}>
-                <div className="card-group">
-                  <img src={card.icon} alt={card.title} />
-                  <h3>{card.title}</h3>
-                </div>
-                <div className="card-text">
-                  <p>{card.description}</p>
-                </div>
+            <div
+              className="bg-white/2 shadow-lg rounded-xl p-8 hover:scale-105 transition-transform ease-in-out duration-300 flex items-center justify-center"
+              key={index}
+            >
+              <div className="flex flex-col items-center justify-between h-full">
+                <img
+                  className="w-[100px] mb-4"
+                  src={card.icon}
+                  alt={card.title}
+                />
+                <h2 className="text-lg font-semibold mb-2">{card.title}</h2>
 
-                <Link to="/about-us#values" className="btn btn-primary">
-                  Learn More
-                </Link>
+                <p className="text-sm text-gray-300">{card.description}</p>
+
+                <button className="bg-[#a87c47] hover:bg-[#966a3a] w-full rounded-xl font-semibold text-lg py-2 mt-6 text-white transition">
+                  <Link to="/about-us#values">Learn More</Link>
+                </button>
               </div>
             </div>
           ))}
         </div>
-      </Container>
+      </div>
     </div>
   );
 };

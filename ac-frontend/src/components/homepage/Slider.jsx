@@ -96,15 +96,12 @@ const Gallery = () => {
   };
 
   return (
-    <div className="w-full bg-white py-16 px-6"  id="destinations">
-      <div
-        className="max-w-[1240px] mx-auto"
-       
-      >
+    <div className="w-full bg-white py-16 px-6" id="destinations">
+      <div className="max-w-[1240px] mx-auto">
         <div className="pb-10 flex flex-col items-center text-center">
           <p className="text-[#a87c47] font-bold text-xl">DESTINATIONS</p>
-          <h1 className="md:text-5xl sm:text-4xl text-3xl font-bold my-4">
-            Your Next Journey Awaits
+          <h1 className="md:text-4xl sm:text-4xl text-3xl font-bold my-4">
+            Your Next <span className="text-[#a87c47]">Journey Awaits</span>
           </h1>
         </div>
 
