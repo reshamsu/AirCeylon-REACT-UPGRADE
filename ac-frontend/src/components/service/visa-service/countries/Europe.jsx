@@ -1,6 +1,5 @@
 import React from "react";
 import Slider from "react-slick";
-import { Container } from "@mui/material";
 import { FaLocationDot } from "react-icons/fa6";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -48,9 +47,9 @@ const attractions = [
 
 const Gallery = () => {
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
-    speed: 600,
+    speed: 800,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
@@ -78,82 +77,46 @@ const Gallery = () => {
   };
 
   return (
-    <div className="landing-slider" id="europe">
-      <Container className="container">
-        <div className="container-fluid">
-          <label>Europe</label>
-          <h1>
-            Visit <span className="gradient-text">Europe</span>
+    <div className="w-full bg-white py-16 px-6" id="europe">
+      <div className="max-w-[1240px] mx-auto">
+        <div className="pb-10 flex flex-col items-center text-center px-4">
+          <p className="text-[#a87c47] font-bold text-xl">EUROPE</p>
+          <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold mt-3 pb-2">
+            Visit <span className="text-[#a87c47]">Europe</span>
           </h1>
         </div>
 
         <Slider {...settings}>
           {attractions.map((item, index) => (
-            <div
-              key={index}
-              style={{ padding: "0 10px", boxSizing: "border-box" }}
-            >
-              <div
-                className="slide-card"
-                style={{
-                  background: "#fff",
-                  overflow: "hidden",
-                  height: "100%",
-                  margin: "1rem",
-                }}
-              >
-                <div className="image">
+            <div key={index} className="px-4">
+              <div className="bg-white border border-gray-100 rounded-xl overflow-hidden transition hover:shadow-xl h-full flex flex-col">
+                <div className="h-[240px] w-full overflow-hidden">
                   <img
                     src={item.img}
                     alt={item.title}
-                    style={{
-                      width: "100%",
-                      height: "240px",
-                      objectFit: "cover",
-                    }}
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="card-body" style={{ padding: "1rem" }}>
+                <div className="p-6 flex flex-col justify-between flex-grow">
                   <a
                     href="/"
-                    style={{
-                      fontWeight: "bold",
-                      display: "flex",
-                      alignItems: "center",
-                      margin: "0.75rem 0",
-                      textDecoration: "none",
-                      fontSize: "1.05rem",
-                    }}
+                    className="text-lg font-semibold text-black flex items-center gap-2 hover:text-[#a87c47] transition mb-2"
                   >
-                    <FaLocationDot />
+                    <FaLocationDot className="text-[#a87c47]" />
                     {item.title}
                   </a>
-                  <p
-                    style={{
-                      fontSize: "0.9rem",
-                      color: "#444",
-                      fontWeight: "400",
-                      lineHeight: "1.5",
-                      marginBottom: "0.75rem",
-                    }}
-                  >
+                  <p className="text-sm text-gray-600 mb-4">
                     {item.description}
                   </p>
-                  <label
-                    style={{
-                      fontSize: "0.9rem",
-                      fontWeight: "600",
-                      color: "var(--text-gold-hover)",
-                    }}
-                  >
+                  <span className="text-sm font-medium text-[#a87c47]">
                     {item.info}
-                  </label>
+                  </span>
                 </div>
               </div>
             </div>
           ))}
         </Slider>
-      </Container>
+      </div>
     </div>
   );
 };
