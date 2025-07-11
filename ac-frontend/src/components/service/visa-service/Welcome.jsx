@@ -8,7 +8,7 @@ const Welcome = () => {
         <div className="p-2">
           <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold mb-6">
             Ready To
-            <span className="text-[#a87c47] ml-3">Travel The World?</span>
+            <span className="text-[#a87c47] ml-2">Travel The World?</span>
           </h1>
           <p className="md:text-xl text-xl font-semibold text-gray-900 mb-6">
             The key to unlock your next journey starts here.

@@ -33,7 +33,7 @@ const steps = [
 
 const Process = () => {
   return (
-    <section className="bg-[linen] text-black py-16 px-4" id="process">
+    <section className="bg-[linen] text-black py-16 p-10" id="process">
       <div className="max-w-[1240px] mx-auto text-center mb-10">
         <p className="text-[#a87c47] font-bold text-lg uppercase mb-2">
           Affiliations
@@ -52,7 +52,7 @@ const Process = () => {
             <div className="text-[#a87c47] font-bold text-lg min-w-[70px]">
               {item.step}:
             </div>
-            <p className="text-gray-800 text-sm md:text-base leading-relaxed">
+            <p className="text-black text-sm md:text-base leading-relaxed">
               {item.description}
             </p>
           </div>

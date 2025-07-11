@@ -19,10 +19,10 @@ const audienceList = [
   },
 ];
 
-const VisaWelcome = () => {
+const ToWhom = () => {
   return (
     <section className="bg-white text-black py-16 px-4" id="target-audience">
-      <div className="max-w-[1240px] mx-auto text-center mb-12">
+      <div className="max-w-[1240px] mx-auto px-8 text-center mb-8">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           Who is <span className="text-[#a87c47]">it for?</span>
         </h1>
@@ -31,11 +31,11 @@ const VisaWelcome = () => {
         </p>
       </div>
 
-      <div className="max-w-[1240px] mx-auto grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <div className="max-w-[1240px] mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {audienceList.map((item, index) => (
           <div
             key={index}
-            className="bg-gray-50 rounded-xl shadow-md hover:shadow-lg p-6 flex flex-col items-end text-center transition"
+            className="bg-gray-100 rounded-xl shadow-md hover:shadow-lg p-6 mx-4 flex flex-col items-start text-center transition"
           >
             <img src={leafIcon} alt="Leaf Icon" className="w-8 mb-4" />
             <img
@@ -53,4 +53,4 @@ const VisaWelcome = () => {
   );
 };
 
-export default VisaWelcome;
+export default ToWhom;

@@ -9,12 +9,12 @@ const procedureSteps = [
 
   { step: "STEP 3" },
   { description: "Notarization", price: 75 },
-  { description: "Additional Cost per Document", price: 40 },
+  { description: "* Additional Cost per Document", price: 40 },
   { description: "Apostille", price: 175 },
-  { description: "Additional Cost per Document", price: 75 },
+  { description: "* Additional Cost per Document", price: 75 },
   { description: "RSN Courier", price: 100 },
   { description: "Canadian Official Document Charges", price: 25 },
-  { description: "Additional Cost per Document", price: 25 },
+  { description: "* Additional Cost per Document", price: 25 },
 
   { step: "STEP 4" },
   { description: "Verification", price: 100 },
@@ -26,10 +26,10 @@ const procedureSteps = [
   { description: "Inbound Shipping", price: 250 },
 ];
 
-const Procedure = () => {
+const Breakdown = () => {
   return (
-    <section className="bg-white text-black py-16 px-4" id="pricing">
-      <div className="max-w-[1240px] mx-auto">
+    <section className="bg-white text-black py-16 p-8" id="pricing">
+      <div className="max-w-[900px] mx-auto">
         <div className="text-center mb-10">
           <p className="text-[#a87c47] font-bold text-lg mb-2">PROCEDURE</p>
           <h1 className="text-3xl md:text-4xl font-bold">
@@ -73,4 +73,4 @@ const Procedure = () => {
   );
 };
 
-export default Procedure;
+export default Breakdown;

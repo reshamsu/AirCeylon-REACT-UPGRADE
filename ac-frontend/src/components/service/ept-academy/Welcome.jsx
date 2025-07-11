@@ -7,7 +7,7 @@ const Welcome = () => {
       <div className="relative max-w-3xl mx-auto text-center z-10">
         <p className="text-[#a87c47] font-bold text-xl mb-4">ACADEMY</p>
         <div className="p-2">
-          <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold pb-6 mx-20 sm:mx-8 md:mx-10">
+          <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold pb-6 mx-2 sm:mx-4 md:mx-8">
             Welcome to Air Ceylon's{" "}
             <span className="text-[#a87c47]">EPT Academy</span>
           </h1>

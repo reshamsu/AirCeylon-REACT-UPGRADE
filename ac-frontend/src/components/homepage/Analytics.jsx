@@ -12,7 +12,7 @@ const Analytics = () => {
         <h1 className="md:text-5xl sm:text-4xl text-3xl font-bold my-4">
           Your Journey, Our Responsibility.
         </h1>
-        <h4 className="md:text-2xl text-xl font-semibold my-4">
+        <h4 className="md:text-xl text-xl font-semibold my-6">
           Navigating Your Experience with Confidence and Ease
         </h4>
 

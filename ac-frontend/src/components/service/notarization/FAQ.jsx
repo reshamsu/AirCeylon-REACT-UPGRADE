@@ -53,7 +53,7 @@ const FAQ = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border border-gray-50 rounded-2xl p-6 bg-white shadow-sm transition hover:shadow-md"
+              className="border border-gray-50 rounded-2xl p-6 bg-white shadow-2xs transition hover:shadow-sm"
             >
               <div
                 className="flex justify-between items-center cursor-pointer"

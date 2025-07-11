@@ -5,7 +5,7 @@ import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
 const Testimonials = () => {
   return (
     <div className="bg-gray-900 text-white py-16 px-4" id="airceylon-testimonials">
-      <div className="max-w-[1240px] mx-auto">
+      <div className="max-w-[900px] mx-auto">
         <div className="text-center mb-12">
           <p className="text-[#c89238] font-bold text-xl">TESTIMONIALS</p>
           <h1 className="text-2xl md:text-4xl font-bold flex justify-center items-center gap-3 my-4">

@@ -1,10 +1,11 @@
 import React from "react";
 import { Container } from "@mui/material";
 
-import myHiveLogo from "../../assets/myhive.png";
+import myHiveLogo from "../../assets/myhive.jpg";
 import googleLogo from "../../assets/google.png";
 import dhlLogo from "../../assets/dhl.jpg";
 import wspaceLogo from "../../assets/Wspace.png";
+import tashaLogo from "../../assets/tasha.jpg";
 import ieltsLogo from "../../assets/ielts.jpg";
 import redSealLogo from "../../assets/redsealnotary.webp";
 
@@ -13,6 +14,7 @@ const brandLogos = [
   { image: googleLogo, name: "Google" },
   { image: dhlLogo, name: "DHL" },
   { image: wspaceLogo, name: "WSPACE" },
+    { image: tashaLogo, name: "Tasha" },
   { image: ieltsLogo, name: "IELTS" },
   { image: redSealLogo, name: "Red Seal Notary" },
 ];
@@ -27,7 +29,7 @@ const Brands = () => {
           </h1>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 justify-items-center items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 justify-items-center items-center">
           {brandLogos.map((brand, index) => (
             <div
               key={index}
@@ -37,7 +39,7 @@ const Brands = () => {
               <img
                 src={brand.image}
                 alt={brand.name}
-                className="w-36 h-30 object-contain"
+                className="w-36 h-30 object-contain rounded-2xl"
               />
             </div>
           ))}

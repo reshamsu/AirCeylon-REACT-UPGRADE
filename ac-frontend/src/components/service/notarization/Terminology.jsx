@@ -48,24 +48,24 @@ const definitions = [
   },
 ];
 
-const VisaWelcome = () => {
+const Terminology = () => {
   return (
     <section className="bg-[linen] text-black py-16 px-4" id="terminology">
-      <div className="max-w-[1240px] mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+      <div className="max-w-[900px] mx-auto">
+        <div className="text-center mx-4">
+          <h1 className="text-3xl md:text-4xl font-bold mb-2 md:mb-4">
             <span className="text-[#a87c47]">Terminology</span>
           </h1>
-          <p className="text-lg font-semibold text-gray-700">
+          <p className="text-md md:text-lg font-semibold text-gray-700">
             The key to notarize your documents starts here.
           </p>
         </div>
 
-        <div className="space-y-14">
+        <div className="space-y-8 mt-4">
           {definitions.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col md:flex-row items-start gap-6 md:gap-10 p-6 md:p-8 rounded-2xl shadow-sm"
+              className="flex flex-col md:flex-row items-center gap-6 md:gap-10 mx-2 p-6 md:p-8 rounded-2xl shadow-sm"
             >
               <img
                 src={item.image}
@@ -91,4 +91,4 @@ const VisaWelcome = () => {
   );
 };
 
-export default VisaWelcome;
+export default Terminology;

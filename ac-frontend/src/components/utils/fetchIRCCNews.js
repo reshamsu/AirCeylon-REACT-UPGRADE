@@ -1,29 +1,15 @@
-const FEED_URL = "https://www.canada.ca/content/canadasite/en/news/web-feeds/news-releases.xml";
-
+// src/utils/fetchIRCCNews.js
 export async function fetchIRCCNews() {
-  try {
-    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(FEED_URL)}`;
-    const response = await fetch(proxyUrl);
-    const result = await response.json();
-
-    const parser = new DOMParser();
-    const xml = parser.parseFromString(result.contents, "text/xml");
-
-    const items = Array.from(xml.querySelectorAll("item"))
-      .filter((item) => {
-        const title = item.querySelector("title")?.textContent?.toLowerCase() || "";
-        return title.includes("immigration") || title.includes("ircc");
-      })
-      .slice(0, 5)
-      .map((item) => ({
-        title: item.querySelector("title")?.textContent,
-        link: item.querySelector("link")?.textContent,
-        pubDate: item.querySelector("pubDate")?.textContent,
-      }));
-
-    return items;
-  } catch (err) {
-    console.error("Failed to fetch IRCC news:", err);
-    return [];
-  }
+  const URL = "https://api.io.canada.ca/io-server/gc/news/en/v2?dept=departmentofcitizenshipandimmigration&sort=publishedDate&orderBy=desc&format=atom";
+  const proxy = `https://api.allorigins.win/get?url=${encodeURIComponent(URL)}`;
+  const res = await fetch(proxy);
+  const data = await res.json();
+  const xml = new DOMParser().parseFromString(data.contents, "application/xml");
+  return Array.from(xml.querySelectorAll("entry"))
+    .map(e => ({
+      title: e.querySelector("title")?.textContent,
+      link: e.querySelector("link")?.getAttribute("href"),
+      date: e.querySelector("updated")?.textContent
+    }))
+    .slice(0, 5);
 }

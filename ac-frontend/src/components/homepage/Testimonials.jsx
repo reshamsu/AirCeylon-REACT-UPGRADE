@@ -25,10 +25,10 @@ const Testimonials = () => {
     <div className="bg-white text-black py-16 px-4">
       <div className="max-w-[1240px] mx-auto">
         <div className="text-center mb-12">
-          <p className="text-[#a87c47] font-bold text-xl">TESTIMONIALS</p>
+          <p className="text-[#c89238] font-bold text-xl">TESTIMONIALS</p>
           <h1 className="text-2xl md:text-4xl font-bold flex justify-center items-center gap-3 my-4">
-            Experience with <span className="text-[#a87c47]">Air Ceylon</span>
-            <FaCommentDots className="text-[#a87c47]" size={40}/>
+            Experience with <span className="text-[#c89238]">Air Ceylon</span>
+            <FaCommentDots className="text-[#c89238]" size={40}/>
           </h1>
         </div>
 
@@ -38,15 +38,15 @@ const Testimonials = () => {
               key={index}
               className="bg-gray-50 backdrop-blur-sm rounded-2xl shadow-lg p-8 flex flex-col justify-between gap-4 hover:shadow-md transition"
             >
-              <p className="text-xl text-[#c89238] font-medium tracking-wide">
+              <p className="text-xl text-[#c89238] font-semibold tracking-wide">
                 {item.label}
               </p>
-              <div className="text-[14px] leading-relaxed relative">
-                <FaQuoteLeft className="inline-block text-[#a87c47] mr-1" size={20} />
+              <div className="text-[15px] leading-relaxed relative">
+                <FaQuoteLeft className="inline-block text-[#c89238] mr-2" size={24} />
                 {item.text}
-                <FaQuoteRight className="inline-block text-[#a87c47] ml-1" size={20}/>
+                <FaQuoteRight className="inline-block text-[#c89238] ml-2" size={24}/>
               </div>
-              <p className="text-shadow-black text-sm mt-2">{item.author}</p>
+              <p className="text-[#c89238] font-medium text-md mt-2">{item.author}</p>
             </div>
           ))}
         </div>

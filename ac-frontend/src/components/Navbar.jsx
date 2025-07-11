@@ -11,7 +11,7 @@ const Navbar = () => {
   const toggleNav = () => setNavOpen(!navOpen);
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50 py-2">
+    <nav className="bg-white shadow-md sticky top-0 z-50 py-0.5">
       <div className="max-w-[1240px] mx-auto px-4 flex justify-between items-center h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center">
@@ -20,7 +20,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center space-x-12 text-[16px] font-medium">
+        <ul className="hidden md:flex items-center space-x-10 text-[16px] font-medium">
           <li>
             <Link to="/" className="hover:text-[#c89238] transition">Home</Link>
           </li>
