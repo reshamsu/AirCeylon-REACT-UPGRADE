@@ -1,19 +1,19 @@
 import React from "react";
-import { Container } from "@mui/material";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
-
-// Correct image import (Assuming assets inside src/assets folder)
 import founderImage from "../../assets/person.jpeg";
 
 const Message = () => {
   return (
-    <div className="about-message">
-      <Container className="container">
-        <div className="card">
-          
-          <div className="card-text">
+    <div className="bg-[linen] text-gray-900 py-16 px-4">
+      <div className="max-w-[1240px] mx-auto px-4">
+        <div className="bg-gray-100 rounded-2xl shadow-md p-8 md:p-12">
+          <div className="text-md md:text-md space-y-4 relative">
+            <p className="text-[#a87c47] font-bold text-lg">
+              <FaQuoteLeft className="inline-block mr-3 mb-1" />
+              A Message from Our Founder
+            </p>
+
             <p>
-              <FaQuoteLeft style={{ marginRight: ".8rem" }} />
               When I came up with Air Ceylon, it wasn’t just about travel — it
               was about transformation.
             </p>
@@ -39,29 +39,23 @@ const Message = () => {
               At Air Ceylon, we are building more than a service. We’re building
               a bridge — between countries, between people, and between dreams
               and reality.
-              <FaQuoteRight style={{ marginLeft: ".6rem" }} />
+              <FaQuoteRight className="inline-block ml-3 mb-1 text-[#a87c47]" />
             </p>
           </div>
 
-          <div className="card-owner">
+          <div className="mt-10 flex items-center gap-4">
             <img
               src={founderImage}
               alt="Founder & CEO"
-              style={{
-                width: "7%",
-                minWidth: "50px",
-                marginRight: "1.4rem",
-                borderRadius: "50%",
-              }}
+              className="w-20 h-20 rounded-full object-cover border border-[#a87c47]"
             />
-            <div className="card-text">
-              <h3>Founder & CEO, Air Ceylon International</h3>
-              <label>- Air Ceylon International</label>
+            <div>
+              <h3 className="font-bold text-lg">Founder & CEO</h3>
+              <p className="text-md text-gray-600">Air Ceylon International</p>
             </div>
           </div>
-
         </div>
-      </Container>
+      </div>
     </div>
   );
 };

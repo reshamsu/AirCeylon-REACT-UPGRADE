@@ -19,17 +19,26 @@ const brandLogos = [
 
 const Brands = () => {
   return (
-    <div className="landing-brands">
-      <Container className="container">
-        <div className="container-fluid">
-          <h1>
-            Brands We <span className="gradient-text-blue">Work With</span>
+    <div className="bg-white py-16 px-4" id="brands">
+      <Container maxWidth="lg">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
+            Brands We <span className="text-[#a87c47]">Work With</span>
           </h1>
         </div>
-        <div className="container-lg">
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 justify-items-center items-center">
           {brandLogos.map((brand, index) => (
-            <div className="card" key={index}>
-              <img src={brand.image} alt={brand.name} title={brand.name} />
+            <div
+              key={index}
+              className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200"
+              title={brand.name}
+            >
+              <img
+                src={brand.image}
+                alt={brand.name}
+                className="w-36 h-30 object-contain"
+              />
             </div>
           ))}
         </div>

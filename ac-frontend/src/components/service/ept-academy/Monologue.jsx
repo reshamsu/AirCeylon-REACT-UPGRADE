@@ -32,8 +32,8 @@ const EPTMonologue = () => {
               <p className="font-medium mt-2">Years Experience</p>
             </div>
             <div className="bg-gray-800 rounded-xl text-center p-6 shadow-md">
-              <h1 className="text-3xl font-bold text-[#a87c47]">150+</h1>
-              <p className="font-medium mt-2">Students Enrolled</p>
+              <h1 className="text-3xl font-bold text-[#a87c47]">100+</h1>
+              <p className="font-medium mt-2">Students Trained</p>
             </div>
             <div className="bg-gray-800 rounded-xl text-center p-6 shadow-md">
               <h1 className="text-3xl font-bold text-[#a87c47]">80%</h1>

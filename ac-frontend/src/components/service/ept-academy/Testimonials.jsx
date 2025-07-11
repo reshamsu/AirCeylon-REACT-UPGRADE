@@ -17,7 +17,7 @@ const testimonials = [
   },
 ];
 
-const EPTTestimonials = () => {
+const Testimonials = () => {
   return (
     <div className="bg-gray-900 text-white py-16 px-4">
       <div className="max-w-[1240px] mx-auto">
@@ -51,4 +51,4 @@ const EPTTestimonials = () => {
   );
 };
 
-export default EPTTestimonials;
+export default Testimonials;

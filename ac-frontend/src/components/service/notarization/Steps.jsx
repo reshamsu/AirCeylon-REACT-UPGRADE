@@ -1,5 +1,4 @@
 import React from "react";
-import { Container } from "@mui/material";
 
 const procedureSteps = [
   { step: "STEP 1" },
@@ -29,61 +28,48 @@ const procedureSteps = [
 
 const Procedure = () => {
   return (
-    <div className="landing-welcome">
-      <Container className="container">
-        <div className="container-fluid">
-          <label>Procedure</label>
-          <h1>
-            Service <span className="gradient-text"> Pricing Breakdown</span>
+    <section className="bg-white text-black py-16 px-4" id="pricing">
+      <div className="max-w-[1240px] mx-auto">
+        <div className="text-center mb-10">
+          <p className="text-[#a87c47] font-bold text-lg mb-2">PROCEDURE</p>
+          <h1 className="text-3xl md:text-4xl font-bold">
+            Service <span className="text-[#a87c47]">Pricing Breakdown</span>
           </h1>
         </div>
-        <div className="container-lg">
-          <table
-            border="1"
-            cellPadding="10"
-            style={{
-              width: "100%",
-              borderCollapse: "collapse",
-              textAlign: "start",
-            }}
-          >
-            <thead style={{ background: "var(--background-gradient-gold)", color: "var(--text-white)" }}>
+
+        <div className="overflow-x-auto">
+          <table className="w-full border border-gray-300 rounded-lg overflow-hidden text-left text-sm">
+            <thead className="bg-[#a87c47] text-white">
               <tr>
-                <th>Description</th>
-                <th>Price (CAD)$</th>
+                <th className="p-3">Description</th>
+                <th className="p-3">Price (CAD $)</th>
               </tr>
             </thead>
             <tbody>
               {procedureSteps.map((item, index) =>
                 item.step ? (
-                  <tr
-                    key={`step-${index}`}
-                    style={{
-                      backgroundColor: "var(--text-white)",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    <td colSpan={2}> {item.step}</td>
+                  <tr key={`step-${index}`} className="bg-gray-100 font-semibold">
+                    <td colSpan={2} className="p-3 text-[#a87c47] uppercase">
+                      {item.step}
+                    </td>
                   </tr>
                 ) : (
-                  <tr key={`desc-${index}`}>
-                    <td>{item.description}</td>
-                    <td>${item.price.toFixed(2)}</td>
+                  <tr key={`desc-${index}`} className="hover:bg-gray-50">
+                    <td className="p-3">{item.description}</td>
+                    <td className="p-3">${item.price.toFixed(2)}</td>
                   </tr>
                 )
               )}
             </tbody>
           </table>
-
-          <p style={{ marginTop: "1rem", fontStyle: "italic", color: "#555" }}>
-            * Table prices are pre-tax and subject to 13% (HST) by the Province
-            of Ontario, payable to service providers located in Ontario -
-            Canada, State of Ontario via Air Ceylon International Office in
-            Canada.
-          </p>
         </div>
-      </Container>
-    </div>
+
+        <p className="text-sm text-gray-600 italic mt-6 max-w-2xl mx-auto text-center">
+          * Prices listed are pre-tax and subject to 13% HST by the Province of Ontario.
+          Payable to service providers located in Ontario, Canada via Air Ceylon International.
+        </p>
+      </div>
+    </section>
   );
 };
 
