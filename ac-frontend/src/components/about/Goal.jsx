@@ -1,7 +1,6 @@
 import React from "react";
 import { Container } from "@mui/material";
 
-// Correct image imports assuming assets are inside src/assets
 import VisionImg from "../../assets/vision.jpg";
 import MissionImg from "../../assets/mission.jpg";
 import VisionWatermark from "../../assets/VisionW.png";
@@ -9,61 +8,55 @@ import MissionWatermark from "../../assets/MissionW.png";
 
 const Goal = () => {
   return (
-    <div className="about-goal">
-      <Container className="container">
-        <div className="container-fluid">
-          
-          {/* Vision Section */}
-          <div className="company">
-            <div className="body-text1" style={{ paddingRight: "6rem" }}>
-              <img
-                src={VisionWatermark}
-                alt="Vision Watermark"
-                className="watermark"
-              />
-              <h1>
-                Our <span className="gradient-text">Vision</span>
-              </h1>
-              <p>
-                "To be the international Hub of Sri Lanka as the Leader of
-                Travel & Tourism."
-              </p>
-            </div>
+    <div className="bg-white text-gray-800 py-20 px-4" id="goal">
+      <Container maxWidth="lg">
+        {/* Vision Section */}
+        <div className="flex flex-col md:flex-row items-center mb-20">
+          <div className="relative w-full md:w-1/2 mb-10 md:mb-0 md:pr-12">
+            <img
+              src={VisionWatermark}
+              alt="Vision Watermark"
+              className="absolute top-0 left-0 w-32 opacity-10"
+            />
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Our <span className="text-[#a87c47]">Vision</span>
+            </h2>
+            <p className="text-lg font-medium leading-relaxed">
+              "To be the international hub of Sri Lanka as the leader of Travel & Tourism."
+            </p>
+          </div>
+          <div className="w-full md:w-1/2">
             <img
               src={VisionImg}
               alt="Vision"
-              className="image"
-              style={{ boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.4)" }}
+              className="rounded-xl shadow-lg w-full object-cover max-h-[400px]"
             />
           </div>
+        </div>
 
-          {/* Mission Section */}
-          <div className="company">
+        {/* Mission Section */}
+        <div className="flex flex-col-reverse md:flex-row items-center">
+          <div className="w-full md:w-1/2 mt-10 md:mt-0">
             <img
               src={MissionImg}
               alt="Mission"
-              className="image"
-              style={{
-                height: "46vh",
-                boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.4)",
-              }}
+              className="rounded-xl shadow-lg w-full object-cover max-h-[400px]"
             />
-            <div className="body-text2" style={{ paddingLeft: "6rem" }}>
-              <img
-                src={MissionWatermark}
-                alt="Mission Watermark"
-                className="watermark"
-              />
-              <h1>
-                Our <span className="gradient-text">Mission</span>
-              </h1>
-              <p>
-                "To Navigate New Opportunities smoothly with ease and confidence as
-                you embark onto your next chapter."
-              </p>
-            </div>
           </div>
-
+          <div className="relative w-full md:w-1/2 md:pl-12">
+            <img
+              src={MissionWatermark}
+              alt="Mission Watermark"
+              className="absolute top-0 left-0 w-32 opacity-10"
+            />
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Our <span className="text-[#a87c47]">Mission</span>
+            </h2>
+            <p className="text-lg font-medium leading-relaxed">
+              "To navigate new opportunities smoothly with ease and confidence as
+              you embark onto your next chapter."
+            </p>
+          </div>
         </div>
       </Container>
     </div>
