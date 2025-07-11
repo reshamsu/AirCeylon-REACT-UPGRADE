@@ -1,22 +1,19 @@
 import React from "react";
-import { Container } from "@mui/material";
-import { FaCheck } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
+import { FaCheck, FaCartPlus } from "react-icons/fa6";
 import { PiTargetBold } from "react-icons/pi";
 import { WiTime4 } from "react-icons/wi";
 import { GrOverview } from "react-icons/gr";
-import { IoCart } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
 import offer from "../../../assets/limited-offer.png";
 
-// Complete product list
 const products = [
   {
     id: 1,
-    name: "Course",
+    name: "Course ZERO",
     sessions: 20,
     duration: "6 months",
     price: "0 (Free)",
-    label: "ZERO (Free)",
+    label: "Free",
   },
   {
     id: 2,
@@ -49,73 +46,85 @@ const EPTPackages = () => {
   };
 
   return (
-    <div className="ept-packages" id="packages">
-      <Container className="container" style={{ padding: "3rem 0" }}>
-        <div className="container-fluid">
-          <h1>
-            IELTS <span className="gradient-text">Courses</span>
+    <div className="bg-white text-black py-16 px-8" id="packages">
+      <div className="max-w-[1240px] mx-auto">
+        <div className="text-center mb-10">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+            IELTS <span className="text-[#a87c47]">Courses</span>
           </h1>
         </div>
-        <div className="container-lg">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product) => (
-            <div className="card" key={product.id}>
-              <div className="card-title-active">
-                <h3>
+            <div
+              key={product.id}
+              className="bg-gray-50 border-gray-900 rounded-xl shadow-md hover:shadow-lg transition flex flex-col justify-between p-5"
+            >
+              <div className="p-2">
+                <div className="flex items-center gap-3 mb-4">
                   {product.id === 1 && (
-                    <img
-                      src={offer}
-                      alt="offer"
-                      style={{ width: "40px", marginRight: "1rem" }}
-                    />
+                    <img src={offer} alt="Offer" className="w-8" />
                   )}
-                  {product.name}{" "}
-                  {product.label ? <span>{product.label}</span> : null}
-                </h3>
-              </div>
+                  <h3 className="text-xl font-semibold">
+                    {product.name}
+                    {product.label && (
+                      <span className="ml-2 text-md text-[#a87c47] font-bold">
+                        ({product.label})
+                      </span>
+                    )}
+                  </h3>
+                </div>
 
-              <div className="card-body">
-                <ul>
-                  <li>
-                    <GrOverview style={{ fontSize: "22px" }} /> Sessions:{" "}
-                    {product.sessions}
+                <ul className="text-sm space-y-3 text-gray-700 mb-4">
+                  <li className="flex items-center gap-2">
+                    <GrOverview className="text-lg text-[#a87c47]" />
+                    <span>Sessions: {product.sessions}</span>
                   </li>
-                  <li>
-                    <PiTargetBold /> Focus: Academic & General
+                  <li className="flex items-center gap-2">
+                    <PiTargetBold className="text-lg text-[#a87c47]" />
+                    <span>Focus: Academic & General</span>
                   </li>
-                  <li>
-                    <WiTime4 /> Duration: {product.duration}
+                  <li className="flex items-center gap-2">
+                    <WiTime4 className="text-lg text-[#a87c47]" />
+                    <span>Duration: {product.duration}</span>
                   </li>
                 </ul>
 
-                <h4>Modules Covered:</h4>
-                <ul>
-                  <li>
-                    <FaCheck /> Listening
-                  </li>
-                  <li>
-                    <FaCheck /> Reading
-                  </li>
-                  <li>
-                    <FaCheck /> Writing
-                  </li>
-                  <li>
-                    <FaCheck /> Speaking
-                  </li>
+                <h4 className="text-sm font-bold text-gray-800 mb-2">
+                  Modules Covered:
+                </h4>
+                <ul className="text-sm space-y-1 text-gray-700 mb-4">
+                  {["Listening", "Reading", "Writing", "Speaking"].map(
+                    (mod, i) => (
+                      <li key={i} className="flex items-center gap-2">
+                        <FaCheck className="text-green-600" />
+                        <span>{mod}</span>
+                      </li>
+                    )
+                  )}
                 </ul>
-                {product.id === 1 && <label>*Terms & Conditions Apply*</label>}
-                <button
-                  onClick={() => handleBuyNow(product)}
-                  className={`btn ${
-                    product.id === 1 ? "btn-primary" : "btn-dark"
-                  }`}
-                >
-                  LKR {product.price.toLocaleString()} <IoCart />
-                </button>
+
+                {product.id === 1 && (
+                  <p className="text-xs text-gray-500 italic mb-4">
+                    *Terms & Conditions Apply
+                  </p>
+                )}
               </div>
+              <button
+                onClick={() => handleBuyNow(product)}
+                className={`w-full flex items-center justify-center gap-2 text-white px-4 py-3 font-semibold rounded-xl ${
+                  product.id === 1
+                    ? "bg-[#a87c47] hover:bg-[#946f3e]"
+                    : "bg-gray-800 hover:bg-gray-700"
+                } transition`}
+              >
+                LKR {product.price}
+                <FaCartPlus />
+              </button>
             </div>
           ))}
         </div>
-      </Container>
+      </div>
     </div>
   );
 };

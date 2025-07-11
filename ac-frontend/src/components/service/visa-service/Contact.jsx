@@ -32,7 +32,7 @@ const VisaContact = () => {
                 <input
                   type="text"
                   placeholder="Your Name"
-                  className="w-full border border-gray-300 p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#a87c47]"
+                  className="w-full border border-gray-200 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a87c47]"
                 />
               </div>
               <div>
@@ -40,7 +40,7 @@ const VisaContact = () => {
                 <input
                   type="text"
                   placeholder="Your Name"
-                  className="w-full border border-gray-300 p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#a87c47]"
+                  className="w-full border border-gray-200 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a87c47]"
                 />
               </div>
             </div>
@@ -51,7 +51,7 @@ const VisaContact = () => {
                 <input
                   type="email"
                   placeholder="Your Email"
-                  className="w-full border border-gray-300 p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#a87c47]"
+                  className="w-full border border-gray-200 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a87c47]"
                 />
               </div>
               <div>
@@ -59,7 +59,7 @@ const VisaContact = () => {
                 <input
                   type="tel"
                   placeholder="Your Phone Number"
-                  className="w-full border border-gray-300 p-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#a87c47]"
+                  className="w-full border border-gray-200 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a87c47]"
                 />
               </div>
             </div>
@@ -67,7 +67,7 @@ const VisaContact = () => {
             <div className="grid md:grid-cols-3 gap-8">
               <div>
                 <label className="block mb-4 font-medium">Choose Country</label>
-                <select className="w-full border border-gray-300 p-4 rounded-xl">
+                <select className="w-full border border-gray-200 p-3 rounded-lg">
                   <option>Select a Country</option>
                   {[
                     "Azerbaijan", "Bahrain", "Bangladesh", "Belarus", "China", "Egypt", "Georgia", "India", "Indonesia", "Japan",
@@ -81,7 +81,7 @@ const VisaContact = () => {
 
               <div>
                 <label htmlFor="adults" className="block mb-4 font-medium">No. of Adults</label>
-                <select id="adults" className="w-full border border-gray-300 p-4 rounded-xl">
+                <select id="adults" className="w-full border border-gray-200 p-3 rounded-lg">
                   <option>Select</option>
                   {[1, 2, 3, 4, 5].map((num) => (
                     <option key={num}>{`${num} Adult${num > 1 ? "s" : ""}`}</option>
@@ -91,7 +91,7 @@ const VisaContact = () => {
 
               <div>
                 <label htmlFor="children" className="block mb-4 font-medium">No. of Children</label>
-                <select id="children" className="w-full border border-gray-300 p-4 rounded-xl">
+                <select id="children" className="w-full border border-gray-200 p-3 rounded-lg">
                   <option>Select</option>
                   {[1, 2, 3, 4, 5].map((num) => (
                     <option key={num}>{`${num} Children`}</option>
@@ -105,7 +105,7 @@ const VisaContact = () => {
               <textarea
                 placeholder="Message here..."
                 rows={4}
-                className="w-full border border-gray-300 p-4 rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-[#a87c47]"
+                className="w-full border border-gray-200 p-3 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-[#a87c47]"
               ></textarea>
             </div>
 

@@ -36,7 +36,7 @@ const Testimonials = () => {
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className="bg-white/1 backdrop-blur-sm rounded-2xl shadow-lg p-8 flex flex-col justify-between gap-4 hover:shadow-md transition"
+              className="bg-gray-50 backdrop-blur-sm rounded-2xl shadow-lg p-8 flex flex-col justify-between gap-4 hover:shadow-md transition"
             >
               <p className="text-xl text-[#c89238] font-medium tracking-wide">
                 {item.label}

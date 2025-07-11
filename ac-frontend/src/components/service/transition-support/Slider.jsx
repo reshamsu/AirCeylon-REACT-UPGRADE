@@ -4,7 +4,6 @@ import { Container } from "@mui/material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Correct Image Imports (Assuming assets folder is inside src/assets)
 import toronto from "../../../assets/toronto.jpg";
 import careers from "../../../assets/careers.jpg";
 import community from "../../../assets/community.jpg";
@@ -45,12 +44,12 @@ const Gallery = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 600,
+    speed: 800,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: false,
-    autoplaySpeed: 10000,
-    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 8000,
+    arrows: false,
     swipe: true,
     touchMove: true,
     draggable: true,
@@ -73,82 +72,45 @@ const Gallery = () => {
   };
 
   return (
-    <div className="landing-slider">
-      <Container className="container">
-        <div className="container-fluid">
-          <label>Canada</label>
-          <h1>Toronto</h1>
+    <div className="w-full bg-white py-16 px-6">
+      <div className="max-w-[1240px] mx-auto">
+        <div className="pb-10 flex flex-col items-center text-center px-4">
+          <p className="text-[#a87c47] font-bold text-xl">CANADA</p>
+          <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold mt-3 pb-2">
+            Toronto
+          </h1>
         </div>
 
         <Slider {...settings}>
           {attractions.map((item, index) => (
-            <div
-              key={index}
-              style={{ padding: "0 10px", boxSizing: "border-box" }}
-            >
-              <div
-                className="slide-card"
-                style={{
-                  borderRadius: "10px",
-                  background: "#fff",
-                  overflow: "hidden",
-                  height: "100%",
-                  margin: "1rem",
-                }}
-              >
-                <div className="image">
+            <div key={index} className="px-4">
+              <div className="bg-white border border-gray-100 rounded-xl overflow-hidden transition hover:shadow-xl h-full flex flex-col">
+                <div className="h-[240px] w-full overflow-hidden">
                   <img
                     src={item.img}
                     alt={item.title}
-                    style={{
-                      width: "100%",
-                      height: "220px",
-                      objectFit: "cover",
-                      borderRadius: "12px",
-                    }}
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="card-body" style={{ padding: "1rem" }}>
+                <div className="p-6 flex flex-col justify-between flex-grow">
                   <a
-                    href={`/hero/?book=${encodeURIComponent(item.info)}`}
-                    style={{
-                      fontWeight: "bold",
-                      display: "flex",
-                      alignItems: "center",
-                      margin: "0.75rem 0",
-                      textDecoration: "none",
-                      color: "var(--text-black-hover)",
-                      fontSize: "1.2rem",
-                    }}
+                    href="/"
+                    className="text-lg font-semibold text-[#a87c47] flex items-center gap-2 transition mb-2"
                   >
                     {item.title}
                   </a>
-                  <p
-                    style={{
-                      fontSize: "0.9rem",
-                      color: "#444",
-                      fontWeight: "400",
-                      lineHeight: "1.5",
-                      marginBottom: "0.75rem",
-                    }}
-                  >
+                  <p className="text-sm text-gray-600 mb-4">
                     {item.description}
                   </p>
-                  <label
-                    style={{
-                      fontSize: "0.85rem",
-                      fontWeight: "600",
-                      color: "var(--text-gold-hover)",
-                    }}
-                  >
+                  <span className="text-sm font-medium text-[#a87c47]">
                     {item.info}
-                  </label>
+                  </span>
                 </div>
               </div>
             </div>
           ))}
         </Slider>
-      </Container>
+      </div>
     </div>
   );
 };

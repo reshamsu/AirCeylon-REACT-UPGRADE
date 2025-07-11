@@ -1,66 +1,52 @@
 import React from "react";
-import { Container } from "@mui/material";
 import { FaCommentDots } from "react-icons/fa";
-import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
+
+const testimonials = [
+  {
+    text: `Miss Tasha was very helpful, gained a lot of tips and she recommended really good resources to practice IELTS, helped me gain a scope of the whole test in a short period of time. Very satisfied with her work and would definitely recommend.`,
+    author: "IELTS Student",
+  },
+  {
+    text: `I had a good experience with the IELTS classes I attended. Tasha was incredibly knowledgeable and provided tailored guidance that helped me improve all areas including reading, writing, listening, and speaking. I passed!`,
+    author: "IELTS Student",
+  },
+  {
+    text: `I wanted a band score of 6.5 for the IELTS, and my English was very weak. Within a very short time, Tasha helped me improve my English skills more than I expected. Highly recommended!`,
+    author: "IELTS Student",
+  },
+];
 
 const EPTTestimonials = () => {
   return (
-    <div className="landing-testimonials2">
-      <Container className="container">
-        <div className="container-fluid">
-          <label>Testimonials</label>
-          <h1>
-            What Our <span className="gradient-text">Students Say</span>{" "}
-            <FaCommentDots />
+    <div className="bg-gray-900 text-white py-16 px-4">
+      <div className="max-w-[1240px] mx-auto">
+        <div className="text-center mb-12">
+          <p className="text-[#c89238] font-bold text-xl">TESTIMONIALS</p>
+          <h1 className="text-2xl md:text-4xl font-bold flex justify-center items-center gap-3 my-4">
+            What Our <span className="text-[#c89238]">Students Say</span>
+            <FaCommentDots className="text-[#c89238]" size={40} />
           </h1>
         </div>
-        <div className="container-lg">
-          <div className="card">
-            <div className="card-body">
-              <h4 className="card-title">
-                <FaQuoteLeft />
-                Miss Tasha was very helpful, gained a lot of tips and she
-                recommended really good resources to practice IELTS, helped me
-                gain a scope of the whole test in a short period of time, very
-                satisfied with her work and would definitely recommend.
-                <FaQuoteRight />
-              </h4>
-              <p className="card-text">IELTS Student</p>
-            </div>
-          </div>
 
-          <div className="card">
-            <div className="card-body">
-              <h4 className="card-title">
-                <FaQuoteLeft />
-                I had a good experience with the IELTS classes I attended. The
-                instructor, Tasha was incredibly knowledgeable and provided
-                tailored guidance that helped me understand the exam structure
-                and improve my skills in all areas, including reading, writing,
-                listening, and speaking. Her engaging individual teaching
-                methods kept my classes interesting and motivating. With her
-                support, I felt confident and well-prepared on test day. I
-                passed! I highly recommend these classes to anyone looking to
-                achieve a high score on the IELTS!
-                <FaQuoteRight />
-              </h4>
-              <p className="card-text">IELTS Student</p>
+        <div className="grid gap-8 md:grid-cols-3 m-6">
+          {testimonials.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white/5 backdrop-blur-lg rounded-2xl shadow-md p-6 flex flex-col justify-between gap-4 hover:shadow-lg transition"
+            >
+              <div className="text-sm leading-relaxed relative text-white">
+                <FaQuoteLeft className="inline-block text-[#c89238] mr-2" size={20}/>
+                {item.text}
+                <FaQuoteRight className="inline-block text-[#c89238] ml-2" size={20}/>
+              </div>
+              <p className="text-sm text-gray-300 mt-3 font-medium italic">
+                — {item.author}
+              </p>
             </div>
-          </div>
-
-          <div className="card">
-            <div className="card-body">
-              <h4 className="card-title">
-                <FaQuoteLeft />I wanted a band score of 6.5 for the IELTS, and
-                my English was very weak. Within a very short time, Tasha helped
-                me improve my English skills more than I expected. Highly
-                recommended! <FaQuoteRight />
-              </h4>
-              <p className="card-text">IELTS Student</p>
-            </div>
-          </div>
+          ))}
         </div>
-      </Container>
+      </div>
     </div>
   );
 };

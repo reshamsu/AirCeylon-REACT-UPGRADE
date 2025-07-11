@@ -1,42 +1,38 @@
-import { Container } from "@mui/material";
 import React from "react";
 import { IoCall } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 
 const Contact = () => {
   return (
-    <>
-      <div className="ept-contact">
-        <Container className="container">
-          <div className="card">
-            <div className="card-body">
-              <h1>
-                Contact <span className="gradient-text">
-                  EPT Academy
-                </span>
-              </h1>
-              <p>
-                We're open all 7 days a week to assist you with any inquiries about our academy and courses.
-              </p>
-              <div className="card-group">
-                <div className="col">
-                  <a href="tel:+94760301141" className="btn btn-primary">
-                    <IoCall /> Call
-                  </a>
+    <div className="bg-[linen] text-black py-16 px-6" id="contact">
+      <div className="max-w-[1240px] mx-auto bg-gray-50 rounded-2xl shadow-md p-10 text-center">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-4">
+          Contact <span className="text-[#a87c47]">EPT Academy</span>
+        </h1>
+        <p className="text-gray-600 mb-6 max-w-xl mx-auto">
+          We're open{" "}
+          <span className="font-semibold text-black">7 days a week</span> to
+          assist you with any inquiries about our academy and courses.
+        </p>
 
-                  <a
-                    href="mailto:eptacademy@airceylonint.com"
-                    className="btn btn-primary"
-                  >
-                    <MdEmail /> Email
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="tel:+94760301141"
+            className="bg-[#a87c47] hover:bg-[#946f3e] text-white px-8 py-4 rounded-xl flex items-center justify-center gap-2 transition shadow-md"
+          >
+            <IoCall size={20} />
+            Call Us
+          </a>
+          <a
+            href="mailto:eptacademy@airceylonint.com"
+            className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 rounded-xl flex items-center justify-center gap-2 transition shadow-md"
+          >
+            <MdEmail size={20} />
+            Email Us
+          </a>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
