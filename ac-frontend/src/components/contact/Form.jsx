@@ -1,8 +1,7 @@
-import { Container } from "@mui/material";
 import React, { useState } from "react";
+import { Container } from "@mui/material";
 import { FiSend } from "react-icons/fi";
 
-// Main component
 export default function ContactForm() {
   const [activeTab, setActiveTab] = useState("form");
 
@@ -17,14 +16,17 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="contact-form">
-      <Container className="container">
-        <div className="tab-buttons">
+    <div className=" py-16 bg-gray-50">
+      <Container className="lg">
+        {/* Toggle Tabs */}
+        <div className="flex justify-center mb-6 gap-2.5">
           {tabButtons.map((tab) => (
             <button
               key={tab.key}
-              className={`btn ${
-                activeTab === tab.key ? "btn-primary" : "btn-outline-primary"
+              className={`px-6 py-3 rounded-xl  font-medium transition ${
+                activeTab === tab.key
+                  ? "bg-[#a87c47] text-white shadow-md"
+                  : "bg-[linen] text-[#a87c47] hover:bg-[#c89238]/10"
               }`}
               onClick={() => setActiveTab(tab.key)}
             >
@@ -33,100 +35,99 @@ export default function ContactForm() {
           ))}
         </div>
 
-        <div className="card">
+        {/* Form or Appointment */}
+        <div className="bg-transparent m-2">
           {activeTab === "form" ? (
-            <div className="card-form">
-              <div className="card-text">
-                <h2>
-                  Send us a <span className="gradient-text">Message.</span>
+            <div className="p-8 shadow-md rounded-2xl">
+              <div className="mb-8 text-center">
+                <h2 className="text-3xl font-bold">
+                  Send us a <span className="text-[#a87c47]">Message</span>
                 </h2>
-                <p>
-                  We're here to assist you with any inquiries about our
-                  solutions
+                <p className="text-gray-600 mt-3">
+                  We're here to assist you with any inquiries about our solutions.
                 </p>
               </div>
 
-              <form>
-                <div className="row">
-                  <div className="form-group">
-                    <label className="gradient-text">Name</label>
+              <form className="space-y-6">
+                {/* Row 1 */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <label className="block text-sm text-gray-700 font-medium mb-3">
+                      Name
+                    </label>
                     <input
                       type="text"
-                      className="form-control"
                       placeholder="Your Name"
+                      className="w-full border border-gray-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c89238]"
                     />
                   </div>
-                  <div className="form-group">
-                    <label className="gradient-text">Email Address</label>
+                  <div>
+                    <label className="block text-sm text-gray-700 font-medium mb-3">
+                      Email Address
+                    </label>
                     <input
                       type="email"
-                      className="form-control"
                       placeholder="Your Email"
+                      className="w-full border border-gray-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c89238]"
                     />
                   </div>
                 </div>
-                <div className="row">
-                  <div className="form-group">
-                    <label className="gradient-text">Phone</label>
+
+                {/* Row 2 */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <label className="block text-sm text-gray-700 font-medium mb-3">
+                      Phone
+                    </label>
                     <input
                       type="tel"
-                      className="form-control"
                       placeholder="Your Phone Number"
+                      className="w-full border border-gray-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c89238]"
                     />
                   </div>
-                  <div className="form-group">
-                    <label className="gradient-text">
+                  <div>
+                    <label className="block text-md text-gray-700 font-medium mb-3">
                       Preferred Support System
                     </label>
-                    <select className="form-control">
+                    <select className="w-full border border-gray-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c89238]">
                       <option>Call for Inquiries</option>
                       <option>Book an Appointment</option>
                       <option>Register for a Course</option>
                     </select>
                   </div>
                 </div>
-                <div className="form-group">
-                  <label className="gradient-text">Additional Info</label>
+
+                {/* Message */}
+                <div>
+                  <label className="block text-md text-gray-700 font-medium mb-3">
+                    Additional Info
+                  </label>
                   <textarea
-                    className="form-control"
+                    rows={4}
                     placeholder="Message here..."
+                    className="w-full border border-gray-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c89238]"
                   />
                 </div>
-                <button className="btn btn-primary" type="submit">
-                  Send Message <FiSend />
-                </button>
+
+                {/* Submit */}
+                <div className="text-center">
+                  <button
+                    type="submit"
+                    className="inline-flex items-center gap-2 font-medium text-lg bg-[#a87c47] text-white px-8 py-4 rounded-xl shadow hover:bg-[#b17a2a] transition"
+                  >
+                    Send Message <FiSend className="text-xl" />
+                  </button>
+                </div>
               </form>
             </div>
           ) : (
-            <div
-              className="calendar-booking"
-              style={{ width: "100%", height: "840px" }}
-            >
+            <div className="w-full h-[900px]">
               <iframe
                 src={iframeSources[activeTab]}
-                style={{
-                  width: "100%",
-                  border: "none",
-                  overflow: "hidden",
-                  height: "100%",
-                }}
-                scrolling="no"
-                id={`${activeTab}_iframe`}
-                title="Booking Calendar"
+                title="Appointment Booking"
+                className="w-full h-full border-none rounded-lg shadow-md"
+                scrolling="yes"
               ></iframe>
-
-              {/* <iframe
-                src={iframeSources[activeTab]} // 🔧 FIXED to use dynamic src
-                style={{
-                  width: "100%",
-                  border: "none",
-                  overflow: "hidden",
-                  height: "100%",
-                }} // 🔧 FIXED to use JSX object, not string
-                scrolling="no"
-                id={`${activeTab}_iframe`}
-                title="Booking Calendar"
-              ></iframe> */}
             </div>
           )}
         </div>

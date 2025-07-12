@@ -34,8 +34,7 @@ const faqs = [
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const toggleFAQ = (index) =>
-    setOpenIndex(openIndex === index ? null : index);
+  const toggleFAQ = (index) => setOpenIndex(openIndex === index ? null : index);
 
   return (
     <div className="bg-[linen] text-gray-900 py-16 px-4" id="faq">
@@ -53,18 +52,17 @@ const FAQ = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border border-gray-50 rounded-2xl p-6 bg-white shadow-2xs transition hover:shadow-sm"
+              className="rounded-2xl p-6 bg-gray-50 shadow-2xs transition hover:shadow-sm"
             >
               <div
                 className="flex justify-between items-center cursor-pointer"
                 onClick={() => toggleFAQ(index)}
               >
-                <h3 className="text-lg font-medium">{faq.question}</h3>
+                <h2 className="text-md font-medium">{faq.question}</h2>
                 <span className="text-3xl text-[#a87c47]">
                   {openIndex === index ? <IoMdClose /> : <IoIosAdd />}
                 </span>
               </div>
-
               {openIndex === index && (
                 <p className="mt-4 text-md text-gray-800 leading-relaxed">
                   {faq.answer}

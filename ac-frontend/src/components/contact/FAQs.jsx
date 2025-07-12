@@ -1,5 +1,5 @@
+import React, { useState } from "react";
 import { Container } from "@mui/material";
-import React, { useState, useEffect } from "react";
 import { IoIosAdd } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
 
@@ -31,56 +31,49 @@ const faqs = [
   },
 ];
 
-const ContactFAQ = () => {
+const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
+  const toggleFAQ = (index) => setOpenIndex(openIndex === index ? null : index);
+
   return (
-    <>
-      <div className="faq-section">
-        <Container className="container">
-          <div className="container-fluid">
-            <label>FAQ</label>
-            <h1>
-              Frequently Asked <span className="gradient-text">Questions</span>
-            </h1>
-            <div className="container-lg">
-              {faqs.map((faq, index) => (
-                <div
-                  className="card"
-                  key={index}
-                  style={{ position: "relative" }}
-                >
-                  <div className="card-body">
-                    <h3 className="card-title">{faq.question}</h3>
-                    {openIndex === index && (
-                      <div className="card-text">
-                        <p>{faq.answer}</p>
-                        <IoMdClose
-                          onClick={() => setOpenIndex(null)}
-                          style={{
-                            position: "absolute",
-                            top: "10px",
-                            right: "10px",
-                            cursor: "pointer",
-                            padding: "6px",
-                            fontSize: "2.4rem",
-                            margin: "10px 2%",
-                          }}
-                        />
-                      </div>
-                    )}
-                  </div>
-                  {openIndex !== index && (
-                    <IoIosAdd onClick={() => setOpenIndex(index)} />
-                  )}
-                </div>
-              ))}
+    <div className="bg-[linen] text-gray-900 py-16 px-4" id="faq">
+      <Container maxWidth="md">
+        <div className="text-center mb-10">
+          <p className="text-[#a87c47] font-bold text-xl uppercase tracking-wider">
+            FAQ
+          </p>
+          <h1 className="text-3xl sm:text-4xl font-bold py-4">
+            Frequently Asked <span className="text-[#a87c47]">Questions</span>
+          </h1>
+        </div>
+
+        <div className="space-y-6">
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className="rounded-2xl p-6 bg-gray-50 shadow-2xs transition hover:shadow-sm"
+            >
+              <div
+                className="flex justify-between items-center cursor-pointer"
+                onClick={() => toggleFAQ(index)}
+              >
+                <h2 className="text-md font-medium">{faq.question}</h2>
+                <span className="text-3xl text-[#a87c47]">
+                  {openIndex === index ? <IoMdClose /> : <IoIosAdd />}
+                </span>
+              </div>
+              {openIndex === index && (
+                <p className="mt-4 text-md text-gray-800 leading-relaxed">
+                  {faq.answer}
+                </p>
+              )}
             </div>
-          </div>
-        </Container>
-      </div>
-    </>
+          ))}
+        </div>
+      </Container>
+    </div>
   );
 };
 
-export default ContactFAQ;
+export default FAQ;

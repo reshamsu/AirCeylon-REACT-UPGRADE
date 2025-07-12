@@ -3,23 +3,24 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Correct image imports assuming assets are in src/assets
+// Importing images
 import officeDesk from "../../assets/office-desk.jpeg";
 import officeCounter from "../../assets/office-counter.jpeg";
 import meetingRoom from "../../assets/meeting_room.jpg";
 import interview from "../../assets/interview.jpg";
 
+// Image array
 const images = [officeDesk, officeCounter, meetingRoom, interview];
 
 const ImageSlider = () => {
   const settings = {
     dots: true,
     infinite: false,
-    speed: 900,
+    speed: 800,
     slidesToShow: 3,
     slidesToScroll: 3,
     autoplay: true,
-    autoplaySpeed: 11000,
+    autoplaySpeed: 10000,
     arrows: false,
     responsive: [
       {
@@ -30,7 +31,7 @@ const ImageSlider = () => {
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 640,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -40,20 +41,17 @@ const ImageSlider = () => {
   };
 
   return (
-    <div className="image-slider">
+    <div className="">
       <Slider {...settings}>
         {images.map((src, index) => (
-          <div key={index}>
-            <img
-              src={src}
-              alt={`slide-${index + 1}`}
-              style={{
-                width: "100%",
-                height: "240px",
-                objectFit: "cover",
-                borderRadius: "12px",
-              }}
-            />
+          <div key={index} className="px-4"> {/* spacing between slides */}
+            <div className="overflow-hidden rounded-xl shadow-md hover:shadow-lg transition duration-300">
+              <img
+                src={src}
+                alt={`Slide ${index + 1}`}
+                className="w-full h-60 object-cover"
+              />
+            </div>
           </div>
         ))}
       </Slider>

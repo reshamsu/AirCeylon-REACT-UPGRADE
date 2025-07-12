@@ -15,34 +15,34 @@ const Analytics = () => {
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 pt-6 m-6">
-          <div className="bg-white/2 shadow-lg rounded-xl p-8 hover:scale-105 transition-transform ease-in-out duration-300 flex items-center justify-evenly">
-            <LuPercent className="text-6xl text-[#a87c47]" />
+          <div className="bg-white/2 shadow-lg rounded-xl p-8 hover:scale-105 transition-transform ease-in-out duration-300 flex items-center justify-around">
+            <LuPercent className="text-6xl text-[#c89238]" />
             <div className="flex flex-col items-center">
-              <h1 className="text-5xl font-bold text-[#a87c47]">100%</h1>
+              <h1 className="text-5xl font-bold text-[#c89238]">100%</h1>
               <h2 className="text-xl font-semibold mt-5">Approval Rate</h2>
             </div>
           </div>
 
-          <div className="bg-white/2 shadow-lg rounded-xl p-6 hover:scale-105 transition-transform ease-in-out duration-300 flex items-center justify-evenly">
-            <ImStatsBars className="text-6xl text-[#a87c47]" />
+          <div className="bg-white/2 shadow-lg rounded-xl p-6 hover:scale-105 transition-transform ease-in-out duration-300 flex items-center justify-around">
+            <ImStatsBars className="text-6xl text-[#c89238]" />
             <div className="flex flex-col items-center">
-              <h1 className="text-5xl font-bold text-[#a87c47]">200+</h1>
+              <h1 className="text-5xl font-bold text-[#c89238]">200+</h1>
               <h2 className="text-xl font-semibold mt-5">Applications</h2>
             </div>
           </div>
 
-          <div className="bg-white/2 shadow-lg rounded-xl p-6 hover:scale-105 transition-transform ease-in-out duration-300 flex items-center justify-evenly">
-            <FaGlobeEurope className="text-6xl text-[#a87c47]" />
+          <div className="bg-white/2 shadow-lg rounded-xl p-6 hover:scale-105 transition-transform ease-in-out duration-300 flex items-center justify-around">
+            <FaGlobeEurope className="text-6xl text-[#c89238]" />
             <div className="flex flex-col items-center">
-              <h1 className="text-5xl font-bold text-[#a87c47]">30+</h1>
+              <h1 className="text-5xl font-bold text-[#c89238]">30+</h1>
               <h2 className="text-xl font-semibold mt-5">Countries</h2>
             </div>
           </div>
 
-          <div className="bg-white/2 shadow-lg rounded-xl p-6 hover:scale-105 transition-transform ease-in-out duration-300 flex items-center justify-evenly">
-            <FaMapLocationDot className="text-6xl text-[#a87c47]" />
+          <div className="bg-white/2 shadow-lg rounded-xl p-6 hover:scale-105 transition-transform ease-in-out duration-300 flex items-center justify-around">
+            <FaMapLocationDot className="text-6xl text-[#c89238]" />
             <div className="flex flex-col items-center">
-              <h1 className="text-5xl font-bold text-[#a87c47]">5+</h1>
+              <h1 className="text-5xl font-bold text-[#c89238]">5+</h1>
               <h2 className="text-xl font-semibold mt-5">Regions</h2>
             </div>
           </div>

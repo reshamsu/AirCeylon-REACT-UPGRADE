@@ -9,12 +9,12 @@ const procedureSteps = [
 
   { step: "STEP 3" },
   { description: "Notarization", price: 75 },
-  { description: "* Additional Cost per Document", price: 40 },
+  { description: "*Additional Cost per Document", price: 40 },
   { description: "Apostille", price: 175 },
-  { description: "* Additional Cost per Document", price: 75 },
+  { description: "*Additional Cost per Document", price: 75 },
   { description: "RSN Courier", price: 100 },
   { description: "Canadian Official Document Charges", price: 25 },
-  { description: "* Additional Cost per Document", price: 25 },
+  { description: "*Additional Cost per Document", price: 25 },
 
   { step: "STEP 4" },
   { description: "Verification", price: 100 },

@@ -36,11 +36,11 @@ const Sustainability = () => {
   ];
 
   return (
-    <div className="text-white px-4 py-20 bg-black/90">
+    <div className="text-gray-800 px-4 py-20 bg-white">
       <div className="max-w-[1240px] mx-auto text-center">
-        <p className="text-[#c89238] font-bold text-xl">CSR</p>
+        <p className="text-[#a87c47] font-bold text-xl">CSR</p>
         <h1 className="md:text-5xl sm:text-4xl text-3xl font-bold my-4 pb-4">
-          Sustainability <span className="text-[#c89238]">Values</span>
+          Sustainability <span className="text-[#a87c47]">Values</span>
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 pt-6 m-6">
@@ -57,7 +57,7 @@ const Sustainability = () => {
                 />
                 <h2 className="text-lg font-semibold mb-2">{card.title}</h2>
 
-                <p className="text-sm text-gray-300">{card.description}</p>
+                <p className="text-sm text-gray-700">{card.description}</p>
 
                 <button className="bg-[#a87c47] hover:bg-[#966a3a] w-full rounded-xl font-semibold text-lg py-2 mt-6 text-white transition">
                   <Link to="/about-us#values">Learn More</Link>

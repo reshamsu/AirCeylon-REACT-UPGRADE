@@ -96,9 +96,9 @@ const Gallery = () => {
   return (
     <div className="w-full bg-white py-16 px-6" id="destinations">
       <div className="max-w-[1240px] mx-auto">
-        <div className="pb-10 flex flex-col items-start text-start px-4">
+        <div className="pb-10 flex flex-col items-center text-center">
           <p className="text-[#a87c47] font-bold text-xl">DESTINATIONS</p>
-          <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold mt-3 pb-2">
+          <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold mt-3">
             Your Next <span className="text-[#a87c47]">Journey Awaits</span>
           </h1>
         </div>

@@ -14,22 +14,22 @@ const brandLogos = [
   { image: googleLogo, name: "Google" },
   { image: dhlLogo, name: "DHL" },
   { image: wspaceLogo, name: "WSPACE" },
-    { image: tashaLogo, name: "Tasha" },
+  { image: tashaLogo, name: "Tasha" },
   { image: ieltsLogo, name: "IELTS" },
   { image: redSealLogo, name: "Red Seal Notary" },
 ];
 
 const Brands = () => {
   return (
-    <div className="bg-white py-16 px-4" id="brands">
+    <div className="bg-[#19233e] text-white py-16 px-4" id="brands">
       <Container maxWidth="lg">
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
-            Brands We <span className="text-[#a87c47]">Work With</span>
+          <h1 className="text-3xl md:text-4xl font-bold">
+            Brands We <span className="text-[#c89238]">Work With</span>
           </h1>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 justify-items-center items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 justify-center items-center">
           {brandLogos.map((brand, index) => (
             <div
               key={index}

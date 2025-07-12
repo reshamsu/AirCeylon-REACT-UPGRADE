@@ -22,11 +22,11 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <div className="bg-white text-black py-16 px-4">
+    <div className="bg-white text-gray-800 py-14 px-4">
       <div className="max-w-[1240px] mx-auto">
         <div className="text-center mb-12">
           <p className="text-[#c89238] font-bold text-xl">TESTIMONIALS</p>
-          <h1 className="text-2xl md:text-4xl font-bold flex justify-center items-center gap-3 my-4">
+          <h1 className="text-2xl md:text-4xl font-bold flex justify-center items-center gap-2 my-4">
             Experience with <span className="text-[#c89238]">Air Ceylon</span>
             <FaCommentDots className="text-[#c89238]" size={40}/>
           </h1>
@@ -36,9 +36,9 @@ const Testimonials = () => {
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className="bg-gray-50 backdrop-blur-sm rounded-2xl shadow-lg p-8 flex flex-col justify-between gap-4 hover:shadow-md transition"
+              className="bg-gray-100 backdrop-blur-sm rounded-2xl shadow-lg p-6 flex flex-col justify-between gap-4 hover:shadow-md transition"
             >
-              <p className="text-xl text-[#c89238] font-semibold tracking-wide">
+              <p className="text-lg font-semibold tracking-wide">
                 {item.label}
               </p>
               <div className="text-[15px] leading-relaxed relative">
@@ -46,7 +46,7 @@ const Testimonials = () => {
                 {item.text}
                 <FaQuoteRight className="inline-block text-[#c89238] ml-2" size={24}/>
               </div>
-              <p className="text-[#c89238] font-medium text-md mt-2">{item.author}</p>
+              <p className="text-[#c89238] font-semibold text-sm mt-1">{item.author}</p>
             </div>
           ))}
         </div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container } from "@mui/material";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import { IoChevronDownOutline } from "react-icons/io5";
 
 const regions = [
@@ -73,71 +73,72 @@ const SubNavbar = () => {
   };
 
   return (
-    <Container>
-      <nav className="desktop-subnav">
-        <ul className="subnav-list">
-          {regions.map((region) => (
-            <li
-              key={region.name}
-              className={`dropdown ${openRegion === region.name ? "open" : ""}`}
+    <Container className="py-3">
+      {/* Desktop View */}
+      <nav className="hidden md:flex justify-center flex-wrap gap-6 text-sm font-medium">
+        {regions.map((region) => (
+          <div key={region.name} className="relative group">
+            <button
+              onClick={() => toggleRegion(region.name)}
+              className="flex items-center gap-1 text-gray-800 hover:text-[#c89238] transition"
             >
-              <span
-                className="nav-link dropdown-toggle"
-                onClick={() => toggleRegion(region.name)}
-              >
-                {region.name} <IoChevronDownOutline />
-              </span>
-              {openRegion === region.name && (
-                <ul className="dropdown-menu">
-                  {region.countries.map((country) => (
-                    <li key={country}>
-                      <NavLink
-                        className="nav-link"
-                        onClick={() => handleRedirectToRegion(region.name)}
-                      >
-                        {country}
-                      </NavLink>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ul>
-      </nav>
+              {region.name}
+              <IoChevronDownOutline className="mt-[2px]" />
+            </button>
 
-      <nav className="mobile-subnav">
-        <ul className="subnav-list">
-          <li className={`dropdown ${mobileOpen ? "open" : ""}`}>
-            <span
-              className="nav-link dropdown-toggle"
-              onClick={toggleMobileMenu}
-            >
-              Countries <IoChevronDownOutline />
-            </span>
-            {mobileOpen && (
-              <ul className="dropdown-menu mobile-grid">
-                {regions.map((region) => (
-                  <li key={region.name} className="region-block">
-                    <strong className="region-title">{region.name}</strong>
-                    <ul className="dropdown-submenu">
-                      {region.countries.map((country) => (
-                        <li key={country}>
-                          <button
-                            className="nav-link"
-                            onClick={() => handleRedirectToRegion(region.name)}
-                          >
-                            {country}
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
+            {/* Dropdown */}
+            {openRegion === region.name && (
+              <ul className="absolute left-0 mt-2 w-40 bg-white rounded-lg shadow-md z-50 p-2 space-y-1">
+                {region.countries.map((country) => (
+                  <li key={country}>
+                    <NavLink
+                      onClick={() => handleRedirectToRegion(region.name)}
+                      className="block px-3 py-1 rounded hover:bg-[#f3f3f3] text-gray-700"
+                    >
+                      {country}
+                    </NavLink>
                   </li>
                 ))}
               </ul>
             )}
-          </li>
-        </ul>
+          </div>
+        ))}
+      </nav>
+
+      {/* Mobile View */}
+      <nav className="md:hidden block">
+        <div className="border border-gray-50 rounded-xl overflow-hidden">
+          <button
+            onClick={toggleMobileMenu}
+            className="w-full flex items-center justify-between px-4 py-3 bg-[#f8f8f8] text-gray-700 font-medium"
+          >
+            Countries <IoChevronDownOutline />
+          </button>
+
+          {mobileOpen && (
+            <div className="bg-white border-t border-gray-200 p-6 space-y-4">
+              {regions.map((region) => (
+                <div key={region.name}>
+                  <h4 className="text-md font-semibold text-[#c89238] mb-2">
+                    {region.name}
+                  </h4>
+                  <ul className="pl-3 space-y-1">
+                    {region.countries.map((country) => (
+                      <li key={country}>
+                        <button
+                          onClick={() => handleRedirectToRegion(region.name)}
+                          className="text-sm font-medium text-gray-700 hover:underline"
+                        >
+                          {country}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </nav>
     </Container>
   );

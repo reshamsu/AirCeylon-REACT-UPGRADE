@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// Import images
+// Images
 import express1 from "../../assets/express1.png";
 import express2 from "../../assets/express2.png";
 import express3 from "../../assets/express3.png";
@@ -30,38 +30,38 @@ const expressOptions = [
 
 const Express = () => {
   return (
-    <div className="bg-[linen] text-black px-4 py-16">
-      <div className="max-w-[1240px] mx-auto text-center">
-        <p className="text-[#a87c47] font-bold text-xl">EXPRESS</p>
-        <h1 className="md:text-5xl sm:text-4xl text-3xl font-bold my-2">
+    <section className="bg-[linen] text-black px-4 py-20">
+      <div className="max-w-screen-xl mx-auto text-center">
+        <p className="text-[#a87c47] font-semibold text-base md:text-lg uppercase tracking-wider">
+          Express
+        </p>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold my-4">
           Express Lane
-        </h1>
+        </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 pt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10 p-6">
           {expressOptions.map((item, index) => (
             <div
               key={index}
-              className="bg-transparent rounded-3xl p-10 flex flex-col items-center text-center hover:shadow-xl transition"
+              className="rounded-2xl hover:shadow-xl transition duration-300 ease-in-out p-6 flex flex-col items-center text-center justify-between"
             >
-              {item.iconPng && (
-                <img
-                  src={item.iconPng}
-                  alt={item.button}
-                  className="w-[120px] mb-4"
-                />
-              )}
-
-              <p className="text-md font-semibold mb-4">{item.title}</p>
-
+              <img
+                src={item.iconPng}
+                alt={item.button}
+                className="w-28 h-28 object-contain mb-4"
+              />
+              <p className="text-md font-medium text-gray-800 mb-6 px-2">
+                {item.title}
+              </p>
               {item.phone ? (
                 <a href={`tel:${item.phone}`} className="w-full">
-                  <button className="bg-[#a87c47] hover:bg-[#966a3a] w-full rounded-xl font-semibold text-lg py-3 text-white transition">
+                  <button className="bg-[#a87c47] hover:bg-[#966a3a] w-full py-3 rounded-xl text-white font-semibold text-base transition">
                     {item.button}
                   </button>
                 </a>
               ) : (
                 <Link to={item.direct || "#"} className="w-full">
-                  <button className="bg-[#a87c47] hover:bg-[#966a3a] w-full rounded-xl font-semibold text-lg py-3 text-white transition">
+                  <button className="bg-[#a87c47] hover:bg-[#966a3a] w-full py-3 rounded-xl text-white font-semibold text-base transition">
                     {item.button}
                   </button>
                 </Link>
@@ -70,7 +70,7 @@ const Express = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

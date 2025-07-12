@@ -4,7 +4,7 @@ import { Container } from "@mui/material";
 
 const VisaContact = () => {
   return (
-    <div className="visa-contact bg-white text-black px-4 py-16 flex flex-col">
+    <div className=" bg-white text-black px-4 py-16 flex flex-col">
       <Container maxWidth="lg" className="text-center mb-12">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
           VISA <span className="text-[#a87c47]">Application Form.</span>
@@ -109,10 +109,10 @@ const VisaContact = () => {
               ></textarea>
             </div>
 
-            <div className="text-center pt-4">
+            <div className="text-center">
               <button
                 type="submit"
-                className="inline-flex items-center gap-4 bg-[#a87c47] text-white px-8 py-3 rounded-xl text-lg font-medium hover:bg-[#926b3f] transition duration-200"
+                className="inline-flex items-center gap-2 font-medium text-lg bg-[#a87c47] text-white px-8 py-4 rounded-xl shadow hover:bg-[#b17a2a] transition"
               >
                 Submit Now <FiSend className="text-xl" />
               </button>
