@@ -11,11 +11,11 @@ const Navbar = () => {
   const toggleNav = () => setNavOpen(!navOpen);
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50 py-0.5">
+    <nav className="bg-gray-50 shadow-md sticky top-0 z-50 py-0.5">
       <div className="max-w-[1240px] mx-auto px-4 flex justify-between items-center h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="Air Ceylon Logo" className="w-12 mr-2" />
+          <img src={logo} alt="Air Ceylon Logo" className="w-11 mr-3" />
           <span className="text-[#a87c47] text-xl font-bold">Air Ceylon</span>
         </Link>
 
@@ -33,18 +33,18 @@ const Navbar = () => {
               Services
             </span>
             {dropdownOpen && (
-              <ul className="absolute top-8 left-0 bg-white shadow-lg border rounded-xl py-4 w-56 z-50">
+              <ul className="absolute top-6 left-0 bg-white shadow-lg rounded-xl py-4 w-50 z-50">
                 <li>
-                  <Link to="/services/visa-service" className="block px-4 py-2 hover:bg-[#f3eadc]">VISA Service</Link>
+                  <Link to="/services/visa-service" className="block px-5 py-2 hover:text-[#a87c47]">VISA Service</Link>
                 </li>
                 <li>
-                  <Link to="/services/ept-academy" className="block px-4 py-2 hover:bg-[#f3eadc]">EPT Academy</Link>
+                  <Link to="/services/ept-academy" className="block px-5 py-2 hover:text-[#a87c47]">EPT Academy</Link>
                 </li>
                 <li>
-                  <Link to="/services/transition-support" className="block px-4 py-2 hover:bg-[#f3eadc]">Transition Support</Link>
+                  <Link to="/services/transition-support" className="block px-5 py-2 hover:text-[#a87c47]">Transition Support</Link>
                 </li>
                 <li>
-                  <Link to="/services/notarization" className="block px-4 py-2 hover:bg-[#f3eadc]">Notarization</Link>
+                  <Link to="/services/notarization" className="block px-5 py-2 hover:text-[#a87c47]">Notarization</Link>
                 </li>
               </ul>
             )}
@@ -73,7 +73,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-3/4 bg-white border-r shadow-lg transform transition-transform duration-300 ease-in-out z-40 ${
+        className={`fixed top-0 left-0 h-full w-3/4 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-40 ${
           navOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
