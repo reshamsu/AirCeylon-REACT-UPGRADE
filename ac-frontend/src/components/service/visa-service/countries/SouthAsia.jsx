@@ -71,7 +71,7 @@ const Gallery = () => {
     <div className="w-full bg-[linen] py-16 px-6" id="south-asia">
       <div className="max-w-[1240px] mx-auto">
         <div className="pb-10 flex flex-col items-center text-center px-4">
-          <p className="text-[#a87c47] font-bold text-xl">South Asia</p>
+          <p className="text-[#a87c47] font-bold text-xl">SOUTH ASIA</p>
           <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold mt-3 pb-2">
             Visit <span className="text-[#a87c47]">South Asia</span>
           </h1>

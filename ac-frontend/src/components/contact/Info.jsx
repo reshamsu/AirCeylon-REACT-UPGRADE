@@ -40,7 +40,7 @@ const ContactInfo = () => {
       <Container maxWidth="lg">
         <div className="text-center mb-12">
           <h1 className="text-3xl sm:text-4xl font-bold mb-3">
-            Get <span className="text-[#c89238]">Connected!</span>
+            Connect <span className="text-[#c89238]">with Us!</span>
           </h1>
           <p>
             We’re here to assist you with any inquiries about our services or solutions.

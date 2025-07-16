@@ -1,6 +1,6 @@
 import { Container } from "@mui/material";
 import React from "react";
-import hero from "../../../assets/ielts2.jpg";
+import hero from "../../../assets/ept-academy.jpeg";
 
 const Hero = () => {
   return (
@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="absolute inset-0">
           <img
             src={hero}
-            className="w-full h-full object-cover brightness-30"
+            className="w-full h-full object-cover brightness-40"
           />
         </div>
 

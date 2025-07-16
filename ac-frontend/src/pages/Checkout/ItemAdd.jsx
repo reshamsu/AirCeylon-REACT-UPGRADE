@@ -1,58 +1,104 @@
+import { useEffect } from "react";
 import { Container } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
+
+const FIXED_REGISTRATION_FEE = 10000;
 
 const Checkout = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const product = location.state?.product;
 
+  // Redirect safely if no product
+  useEffect(() => {
+    if (!product) {
+      navigate("/checkout/no-items");
+    }
+  }, [product, navigate]);
+
   if (!product) {
-    navigate("/checkout/no-items");
     return null;
   }
+
+  // Check if course is "Course ZERO" (case sensitive)
+  const isFreeCourse = product.name === "Course ZERO";
+
+  // Course fee number (0 if free course, else product.coursePrice or fallback)
+  const courseFeeNumber = isFreeCourse
+    ? 0
+    : Number(product.coursePrice) || 0;
+
+  // Registration fee is always fixed
+  const registrationFee = FIXED_REGISTRATION_FEE;
+
+  // Subtotal = registration fee + course fee
+  const subtotal = registrationFee + courseFeeNumber;
+
+  // Total price fallback logic
+  const totalPrice =
+    Number(product.totalPrice) || subtotal || Number(product.price) || 0;
+
+  // Formatting helper to add commas and no decimals
+  const formatPrice = (num) =>
+    num.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
 
   const handleCheckout = () => {
     navigate("/checkout/personal-info", { state: { product } });
   };
 
   return (
-    <div className="checkout-section">
+    <div className="h-full bg-white py-20 px-4 md:px-10">
       <Container maxWidth="lg">
-        <div className="card">
-          <div className="card-section">
-            <div className="container-fluid">
-              <h1>
-                SHOPPING <span className="gradient-text">CART</span>
-              </h1>
-              <p>
-                You have selected: <strong>{product.name}</strong>
-              </p>
-            </div>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+          {/* Left Section */}
+          <div>
+            <h1 className="text-2xl font-bold text-black">
+              SHOPPING <span className="text-[#a87c47]">CART</span>
+            </h1>
+            <p className="text-gray-700 mt-4">
+              You have selected: <strong>{product.name}</strong>
+            </p>
           </div>
 
-          <div className="card-final" style={{ borderRadius: "10px" }}>
-            <div className="card-summary">
-              <ul className="summary">
-                <li>Taxes</li>
-                <i>LKR 0</i>
-              </ul>
-              <ul className="summary">
-                <li>Applied discounts or offers</li>
-                <i>No Discount Applied</i>
-              </ul>
-              <ul className="summary">
-                <li>Total Price</li>
-                <i>LKR {product.price.toLocaleString()}</i>
-              </ul>
-              <ul className="final-summary">
-                <strong>Total Price</strong>
-                <strong>LKR {product.price.toLocaleString()}</strong>
-              </ul>
-            </div>
-            <div className="button">
-              <button onClick={handleCheckout} className="btn btn-dark">
-                Proceed to Checkout
-              </button>
+          {/* Right Section - Cart Summary */}
+          <div className="bg-gray-50 rounded-xl p-10 w-full max-w-md ml-auto shadow-md">
+            <h2 className="text-xl font-bold mb-4 text-[#a87c47]">YOUR CART</h2>
+
+            <div className="text-sm">
+              <h3 className="font-semibold mb-2">Summary</h3>
+
+              <div className="flex justify-between py-3 border-b border-gray-200">
+                <span>Registration Fee</span>
+                <span>LKR {formatPrice(registrationFee)}</span>
+              </div>
+
+              <div className="flex justify-between py-3 border-b border-gray-200">
+                <span>Course Fee</span>
+                <span>
+                  {isFreeCourse
+                    ? "Free"
+                    : `LKR ${formatPrice(courseFeeNumber)}`}
+                </span>
+              </div>
+
+              <div className="flex justify-between font-semibold py-3 border-b border-gray-200">
+                <span>Subtotal</span>
+                <span>LKR {formatPrice(subtotal)}</span>
+              </div>
+
+              <div className="flex justify-between font-bold py-3">
+                <span>Total Price</span>
+                <span>LKR {formatPrice(totalPrice)}</span>
+              </div>
+
+              <div className="pt-6">
+                <button
+                  onClick={handleCheckout}
+                  className="block w-full text-center bg-black text-white font-semibold py-3 rounded-xl hover:bg-gray-800 transition"
+                >
+                  Proceed to Checkout
+                </button>
+              </div>
             </div>
           </div>
         </div>

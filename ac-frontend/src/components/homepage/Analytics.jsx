@@ -33,9 +33,9 @@ const cardItems = [
 
 const Analytics = () => {
   return (
-    <section className="bg-black/90 text-white px-4 py-20">
+    <div className="bg-black/90 text-white px-4 py-20">
       <div className="max-w-screen-xl mx-auto text-center">
-        <p className="text-[#c89238] font-semibold text-base md:text-lg tracking-wider uppercase">
+        <p className="text-[#c89238] font-bold text-base md:text-lg tracking-wider uppercase">
           Our Expertise
         </p>
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4">
@@ -64,7 +64,7 @@ const Analytics = () => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

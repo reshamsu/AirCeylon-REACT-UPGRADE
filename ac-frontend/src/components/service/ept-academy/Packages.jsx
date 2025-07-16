@@ -6,13 +6,15 @@ import { WiTime4 } from "react-icons/wi";
 import { GrOverview } from "react-icons/gr";
 import offer from "../../../assets/limited-offer.png";
 
+const FIXED_REGISTRATION_FEE = 10000;
+
 const products = [
   {
     id: 1,
     name: "Course ZERO",
     sessions: 20,
     duration: "6 months",
-    price: "0 (Free)",
+    price: 0, // numeric price
     label: "Free",
   },
   {
@@ -20,21 +22,21 @@ const products = [
     name: "Crash Course",
     sessions: 5,
     duration: "Customizable",
-    price: "25,000",
+    price: 25000,
   },
   {
     id: 3,
     name: "Essential Course",
     sessions: 10,
     duration: "Customizable",
-    price: "50,000",
+    price: 50000,
   },
   {
     id: 4,
     name: "Pro Course",
     sessions: 20,
     duration: "Customizable",
-    price: "100,000",
+    price: 100000,
   },
 ];
 
@@ -42,7 +44,19 @@ const EPTPackages = () => {
   const navigate = useNavigate();
 
   const handleBuyNow = (product) => {
-    navigate("/checkout/add-items", { state: { product } });
+    const coursePrice = product.price;
+    const registrationFee = FIXED_REGISTRATION_FEE;
+    const totalPrice = registrationFee + coursePrice;
+
+    // Prepare product object with all prices for checkout
+    const productForCheckout = {
+      ...product,
+      registrationFee,
+      coursePrice,
+      totalPrice,
+    };
+
+    navigate("/checkout/add-items", { state: { product: productForCheckout } });
   };
 
   return (
@@ -112,14 +126,24 @@ const EPTPackages = () => {
               </div>
               <button
                 onClick={() => handleBuyNow(product)}
-                className={`w-full flex items-center justify-center gap-2 text-white px-4 py-3 font-semibold rounded-xl ${
+                className={`w-full flex items-center justify-center gap-2 text-white px-4 py-3 font-semibold rounded-xl relative group ${
                   product.id === 1
                     ? "bg-[#a87c47] hover:bg-[#946f3e]"
-                    : "bg-gray-800 hover:bg-gray-700"
+                    : "bg-gray-800 hover:bg-[#a87c47]"
                 } transition`}
               >
-                LKR {product.price}
-                <FaCartPlus />
+                {/* Default content: price + icon */}
+                <span className="flex items-center gap-2 transition-opacity duration-200 group-hover:opacity-0">
+                  {product.price === 0
+                    ? "Free"
+                    : `LKR ${product.price.toLocaleString()}`}
+                  <FaCartPlus />
+                </span>
+
+                {/* Hover content: "Select to Register" */}
+                <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200 group-hover:opacity-100 pointer-events-none">
+                  Select to Register
+                </span>
               </button>
             </div>
           ))}

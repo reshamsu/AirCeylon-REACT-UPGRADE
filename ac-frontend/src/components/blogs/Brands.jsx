@@ -21,7 +21,7 @@ const brandLogos = [
 
 const Brands = () => {
   return (
-    <div className="bg-[#19233e] text-white py-16 px-4" id="brands">
+    <div className="bg-gray-800 text-white py-16 px-4" id="brands">
       <Container maxWidth="lg">
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-bold">
@@ -29,11 +29,11 @@ const Brands = () => {
           </h1>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 justify-center items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 justify-center">
           {brandLogos.map((brand, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200"
+              className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200 flex justify-center"
               title={brand.name}
             >
               <img

@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <div className="relative w-full text-white">
       <div className="absolute inset-0">
-        <img src={hero} className="w-full h-full object-cover brightness-30" />
+        <img src={hero} className="w-full h-full object-cover brightness-40" />
       </div>
 
       <div className="relative z-10 flex flex-col items-center justify-center h-[50vh] md:h-[90vh] px-4 text-center">

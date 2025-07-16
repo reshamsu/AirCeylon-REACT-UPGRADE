@@ -1,6 +1,6 @@
 import React from "react";
 import SubNavbar from "../../SubNavbar";
-import hero from "../../../assets/visa-section.avif";
+import hero from "../../../assets/visa-service.jpg";
 
 const Hero = () => {
   return (
@@ -11,7 +11,7 @@ const Hero = () => {
         <div className="absolute inset-0">
           <img
             src={hero}
-            className="w-full h-full object-cover brightness-30"
+            className="w-full h-full object-cover brightness-40"
           />
         </div>
         <div className="relative z-10 flex items-center justify-center h-[50vh] md:h-[88vh] px-4 text-center">

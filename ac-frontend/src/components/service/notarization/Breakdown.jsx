@@ -31,9 +31,9 @@ const Breakdown = () => {
     <section className="bg-white text-black py-16 p-8" id="pricing">
       <div className="max-w-[900px] mx-auto">
         <div className="text-center mb-10">
-          <p className="text-[#a87c47] font-bold text-lg mb-2">PROCEDURE</p>
+          <p className="text-[#a87c47] font-bold text-lg mb-2">BREAKDOWN</p>
           <h1 className="text-3xl md:text-4xl font-bold">
-            Service <span className="text-[#a87c47]">Pricing Breakdown</span>
+            Pricing <span className="">and Procedure</span>
           </h1>
         </div>
 
@@ -48,15 +48,34 @@ const Breakdown = () => {
             <tbody>
               {procedureSteps.map((item, index) =>
                 item.step ? (
-                  <tr key={`step-${index}`} className="bg-gray-100 font-semibold">
+                  <tr
+                    key={`step-${index}`}
+                    className="bg-gray-100 font-semibold"
+                  >
                     <td colSpan={2} className="p-3 text-[#a87c47] uppercase">
                       {item.step}
                     </td>
                   </tr>
                 ) : (
                   <tr key={`desc-${index}`} className="hover:bg-gray-50">
-                    <td className="p-3">{item.description}</td>
-                    <td className="p-3">${item.price.toFixed(2)}</td>
+                    <td className="p-3">
+                      {item.description.startsWith("*Additional Cost") ? (
+                        <span className="font-semibold">
+                          {item.description}
+                        </span>
+                      ) : (
+                        item.description
+                      )}
+                    </td>
+                    <td className="p-3">
+                      {item.description.startsWith("*Additional Cost") ? (
+                        <span className="font-semibold">
+                          ${item.price.toFixed(2)}
+                        </span>
+                      ) : (
+                        `$${item.price.toFixed(2)}`
+                      )}
+                    </td>
                   </tr>
                 )
               )}
@@ -65,8 +84,9 @@ const Breakdown = () => {
         </div>
 
         <p className="text-sm text-gray-600 italic mt-6 max-w-2xl mx-auto text-center">
-          * Prices listed are pre-tax and subject to 13% HST by the Province of Ontario.
-          Payable to service providers located in Ontario, Canada via Air Ceylon International.
+          * Prices listed are pre-tax and subject to 13% HST by the Province of
+          Ontario. Payable to service providers located in Ontario, Canada via
+          Air Ceylon International.
         </p>
       </div>
     </section>

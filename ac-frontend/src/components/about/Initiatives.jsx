@@ -17,7 +17,7 @@ const Initiatives = () => {
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 m-8">
-          <div className="bg-white/2 shadow-lg rounded-xl p-8 hover:scale-105 transition-transform ease-in-out duration-300 flex items-center justify-center">
+          <div className="bg-white/2 shadow-lg rounded-xl p-8 hover:scale-105 transition-transform ease-in-out duration-300 flex items-start justify-center">
             <div className="flex flex-col items-center text-center">
               <img
                 className="w-[100px] mb-4"

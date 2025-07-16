@@ -1,9 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from "@mui/material";
 import { FiSend } from "react-icons/fi";
 
 export default function ContactForm() {
   const [activeTab, setActiveTab] = useState("form");
+
+  // Form field states
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [service, setService] = useState(""); // for select
+  const [message, setMessage] = useState("");
+
+  const [isValid, setIsValid] = useState(false);
+
+  // Simple email regex for validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Validate fields whenever they change (except message, which is optional)
+  useEffect(() => {
+    const valid =
+      firstName.trim() !== "" &&
+      lastName.trim() !== "" &&
+      emailRegex.test(email) &&
+      phone.trim() !== "" &&
+      service !== "" &&
+      service !== "Select a Service";
+
+    setIsValid(valid);
+  }, [firstName, lastName, email, phone, service]);
 
   const tabButtons = [
     { key: "form", label: "Contact Form" },
@@ -16,14 +42,14 @@ export default function ContactForm() {
   };
 
   return (
-    <div className=" py-16 bg-gray-50">
+    <div className="py-16 bg-gray-50">
       <Container className="lg">
         {/* Toggle Tabs */}
         <div className="flex justify-center mb-6 gap-2.5">
           {tabButtons.map((tab) => (
             <button
               key={tab.key}
-              className={`px-6 py-3 rounded-xl  font-medium transition ${
+              className={`px-6 py-3 rounded-xl font-medium transition ${
                 activeTab === tab.key
                   ? "bg-[#a87c47] text-white shadow-md"
                   : "bg-[linen] text-[#a87c47] hover:bg-[#c89238]/10"
@@ -36,7 +62,7 @@ export default function ContactForm() {
         </div>
 
         {/* Form or Appointment */}
-        <div className="bg-transparent m-2">
+        <div className="bg-transparent m-2" id="appointment">
           {activeTab === "form" ? (
             <div className="p-8 shadow-md rounded-2xl">
               <div className="mb-8 text-center">
@@ -48,19 +74,48 @@ export default function ContactForm() {
                 </p>
               </div>
 
-              <form className="space-y-6">
+              <form
+                className="space-y-6"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  if (isValid) {
+                    // handle form submit here
+                    alert("Form submitted!");
+                  }
+                }}
+              >
                 {/* Row 1 */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
                     <label className="block text-sm text-gray-700 font-medium mb-3">
-                      Name
+                      First Name
                     </label>
                     <input
                       type="text"
                       placeholder="Your Name"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
                       className="w-full border border-gray-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c89238]"
+                      required
                     />
                   </div>
+                  <div>
+                    <label className="block text-sm text-gray-700 font-medium mb-3">
+                      Last Name
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      className="w-full border border-gray-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c89238]"
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* Row 2 */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <div>
                     <label className="block text-sm text-gray-700 font-medium mb-3">
                       Email Address
@@ -68,13 +123,12 @@ export default function ContactForm() {
                     <input
                       type="email"
                       placeholder="Your Email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       className="w-full border border-gray-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c89238]"
+                      required
                     />
                   </div>
-                </div>
-
-                {/* Row 2 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
                     <label className="block text-sm text-gray-700 font-medium mb-3">
                       Phone
@@ -82,17 +136,30 @@ export default function ContactForm() {
                     <input
                       type="tel"
                       placeholder="Your Phone Number"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
                       className="w-full border border-gray-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c89238]"
+                      required
                     />
                   </div>
                   <div>
                     <label className="block text-md text-gray-700 font-medium mb-3">
-                      Preferred Support System
+                     Select Service
                     </label>
-                    <select className="w-full border border-gray-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c89238]">
-                      <option>Call for Inquiries</option>
+                    <select
+                      value={service}
+                      onChange={(e) => setService(e.target.value)}
+                      className="w-full border border-gray-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c89238]"
+                      required
+                    >
+                      <option value="">Select a Service</option>
+                      <option>General Inquiry</option>
                       <option>Book an Appointment</option>
                       <option>Register for a Course</option>
+                      <option>VISA Application</option>
+                      <option>Transition Support</option>
+                      <option>Notarization</option>
+                      <option>Other Inquires</option>
                     </select>
                   </div>
                 </div>
@@ -104,7 +171,9 @@ export default function ContactForm() {
                   </label>
                   <textarea
                     rows={4}
-                    placeholder="Message here..."
+                    placeholder="Kindly provide any more information regarding your inquiry in order to better assist you..."
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                     className="w-full border border-gray-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c89238]"
                   />
                 </div>
@@ -113,7 +182,12 @@ export default function ContactForm() {
                 <div className="text-center">
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 font-medium text-lg bg-[#a87c47] text-white px-8 py-4 rounded-xl shadow hover:bg-[#b17a2a] transition"
+                    disabled={!isValid}
+                    className={`inline-flex items-center gap-2 font-medium text-lg px-8 py-4 rounded-xl shadow transition ${
+                      isValid
+                        ? "bg-[#a87c47] text-white hover:bg-[#b17a2a]"
+                        : "bg-gray-400 text-gray-200 cursor-not-allowed"
+                    }`}
                   >
                     Send Message <FiSend className="text-xl" />
                   </button>
@@ -125,7 +199,7 @@ export default function ContactForm() {
               <iframe
                 src={iframeSources[activeTab]}
                 title="Appointment Booking"
-                className="w-full h-full border-none rounded-lg shadow-md"
+                className="w-full h-full border-none rounded-xl shadow-md"
                 scrolling="yes"
               ></iframe>
             </div>

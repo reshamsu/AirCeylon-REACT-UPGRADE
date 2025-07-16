@@ -8,7 +8,8 @@ const steps = [
   },
   {
     step: "Step 2",
-    description: "Shipping to Toronto, Canada (my address).",
+    description:
+      "Shipping to Air Ceylon International Office in Toronto - Canada.",
   },
   {
     step: "Step 3",
@@ -33,7 +34,7 @@ const steps = [
 
 const Process = () => {
   return (
-    <section className="bg-[linen] text-black py-16 p-10" id="process">
+    <div className="bg-[linen] text-black py-16 p-10" id="process">
       <div className="max-w-[1240px] mx-auto text-center mb-10">
         <p className="text-[#a87c47] font-bold text-lg uppercase mb-2">
           Affiliations
@@ -42,11 +43,15 @@ const Process = () => {
           Canadian Issued <span className="text-[#a87c47]">Documents</span>
         </h1>
         <p className="text-gray-700 max-w-xl mx-auto">
-          Here’s a quick glance at the process for getting your Canadian Issued Documents Apostilled, Notarized, Authenticated & Verified.
+          Here’s a quick glance at the process for getting your Canadian Issued
+          Documents Apostilled, Notarized, Authenticated & Verified.
         </p>
       </div>
 
       <div className="max-w-[800px] mx-auto space-y-6 text-left">
+        <h2 className="text-lg font-semibold text-gray-700">
+          Steps to Notarize your documents:
+        </h2>
         {steps.map((item, index) => (
           <div key={index} className="flex items-start gap-4">
             <div className="text-[#a87c47] font-bold text-lg min-w-[70px]">
@@ -57,8 +62,14 @@ const Process = () => {
             </p>
           </div>
         ))}
+        <button
+          onClick={() => handleBuyNow(product)}
+          className="flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 w-fit font-semibold rounded-xl"
+        >
+          View Pricing
+        </button>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -21,9 +21,9 @@ const audienceList = [
 
 const ToWhom = () => {
   return (
-    <section className="bg-white text-black py-16 px-4" id="target-audience">
-      <div className="max-w-[1240px] mx-auto px-8 text-center mb-8">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
+    <section className="bg-white text-black py-20 px-4" id="target-audience">
+      <div className="max-w-[1240px] mx-auto px-8 text-center mb-12">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">
           Who is <span className="text-[#a87c47]">it for?</span>
         </h1>
         <p className="text-lg font-medium text-gray-700">
@@ -31,21 +31,26 @@ const ToWhom = () => {
         </p>
       </div>
 
-      <div className="max-w-[1240px] mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="max-w-[1240px] mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {audienceList.map((item, index) => (
           <div
             key={index}
-            className="bg-gray-100 rounded-xl shadow-md hover:shadow-lg p-6 mx-4 flex flex-col items-start text-center transition"
+            className="relative rounded-xl overflow-hidden shadow-md hover:shadow-lg group transition"
           >
-            <img src={leafIcon} alt="Leaf Icon" className="w-8 mb-4" />
+            {/* Image */}
             <img
               src={item.image}
               alt={item.title}
-              className="w-full h-48 object-cover rounded-lg mb-4"
+              className="w-full h-64 object-cover transition duration-300 group-hover:brightness-110"
             />
-            <h3 className="text-lg font-semibold text-gray-800">
-              {item.title}
-            </h3>
+
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-opacity-60 z-10 flex flex-col justify-between p-6">
+              <img src={leafIcon} alt="Leaf Icon" className="w-8 h-8" />
+              <h2 className="text-black text-lg font-bold  mt-auto">
+                {item.title}
+              </h2>
+            </div>
           </div>
         ))}
       </div>

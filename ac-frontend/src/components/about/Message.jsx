@@ -9,7 +9,7 @@ const Message = () => {
         <div className="bg-gray-100 rounded-2xl shadow-md p-8 md:p-12">
           <div className="text-md md:text-md space-y-4 relative">
             <p className="text-[#a87c47] font-bold text-lg">
-              <FaQuoteLeft className="inline-block mr-3 mb-1" />
+              <FaQuoteLeft className="inline-block mr-3 mb-1" size={24}/>
               A Message from Our Founder
             </p>
 
@@ -39,7 +39,7 @@ const Message = () => {
               At Air Ceylon, we are building more than a service. We’re building
               a bridge — between countries, between people, and between dreams
               and reality.
-              <FaQuoteRight className="inline-block ml-3 mb-1 text-[#a87c47]" />
+              <FaQuoteRight className="inline-block ml-3 mb-1 text-[#a87c47]" size={24} />
             </p>
           </div>
 
@@ -47,11 +47,11 @@ const Message = () => {
             <img
               src={founderImage}
               alt="Founder & CEO"
-              className="w-20 h-20 rounded-full object-cover border border-[#a87c47]"
+              className="w-20 h-20 rounded-full object-cover border-4 border-[#a87c47]"
             />
             <div>
               <h3 className="font-bold text-lg">Founder & CEO</h3>
-              <p className="text-md text-gray-600">Air Ceylon International</p>
+              <p className="text-sm font-semibold text-[#a87c47]">Air Ceylon International</p>
             </div>
           </div>
         </div>

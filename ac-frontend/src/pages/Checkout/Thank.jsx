@@ -1,48 +1,35 @@
-import { Container } from "@mui/material";
 import React from "react";
+import { Container } from "@mui/material";
 import { MdVerifiedUser } from "react-icons/md";
 
-const Payment = () => {
+const ThankYou = () => {
   return (
-    <div className="checkout-section">
-      <Container className="container">
-        <div className="card">
-          <div className="card-section">
-            <h1>Thank you for making a purchase with <span className="gradient-text">EPT Academy.</span></h1>
-            <p>We hope to see you soon</p>
-            <div className="button">
-              <a href="/checkout/no-items" className="text-button">
-                Return to Cart
-              </a>
+    <div className="h-full bg-white py-24 px-10 md:px-10">
+      <Container maxWidth="lg">
+        <div className="max-w-2xl mx-auto text-center bg-gray-50 p-10 rounded-2xl shadow-SM">
+          <div className="flex flex-col items-center space-y-4">
+            <div className="text-green-600 text-5xl mb-4">
+              <MdVerifiedUser />
             </div>
-          </div>
 
-          {/* <div className="card-final">
-            <div className="card-summary">
-              <h2>YOUR CART</h2>
-              <h4>Summary</h4>
-              <ul className="summary">  
-                <li>Taxes</li>
-                <p>$ 0</p>
-              </ul>
-              <ul className="summary">
-                <li>Discounts</li>
-                <i>No Discount Applied</i>
-              </ul>
-              <ul className="summary">
-                <li>Total Price</li>
-                <p>$ 0</p>
-              </ul>
-              <ul className="final-summary">
-                <strong>Total Price</strong>
-                <strong>$ 0</strong>
-              </ul>
-            </div>
-          </div> */}
+            <h1 className="text-3xl font-bold text-black">
+              Thank you for making a purchase with{" "}
+              <span className="text-[#a87c47]">EPT Academy.</span>
+            </h1>
+
+            <p className="text-gray-700 text-lg">We hope to see you soon!</p>
+
+            <a
+              href="/checkout/no-items"
+              className="mt-6 inline-block bg-black text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-gray-800 transition"
+            >
+              Return to Cart
+            </a>
+          </div>
         </div>
       </Container>
     </div>
   );
 };
 
-export default Payment;
+export default ThankYou;
