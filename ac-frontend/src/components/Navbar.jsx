@@ -3,7 +3,7 @@ import logo from "../assets/Logo.png";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { IoBagCheckOutline } from "react-icons/io5";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -19,23 +19,24 @@ const Navbar = () => {
 
   useEffect(() => {
     setNavOpen(false);
+    window.scrollTo(0, 0); // Scroll to top on route change
   }, [currentPath]);
 
   return (
     <nav className="bg-gray-50 shadow-md sticky top-0 z-50 py-0.5">
       <div className="max-w-[1240px] mx-auto px-4 flex justify-between items-center h-20">
         {/* Logo */}
-        <a href="/" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img src={logo} alt="Air Ceylon Logo" className="w-11 mr-3" />
           <span className="text-[#a87c47] text-xl font-bold">Air Ceylon</span>
-        </a>
+        </Link>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center space-x-10 text-[16px] font-medium">
           <li>
-            <a href="/" className={`${isActive("/") ? "text-[#a87c47] font-semibold" : "hover:text-[#a87c47]"} transition`}>
+            <Link to="/" className={`${isActive("/") ? "text-[#a87c47] font-semibold" : "hover:text-[#a87c47]"} transition`}>
               Home
-            </a>
+            </Link>
           </li>
 
           <li
@@ -48,33 +49,33 @@ const Navbar = () => {
             </span>
             {desktopDropdownOpen && (
               <ul className="absolute top-6 left-0 bg-white shadow-lg rounded-xl py-4 w-56 z-50">
-                <li><a href="/services/visa-service" className="block px-5 py-2 hover:text-[#a87c47]">VISA Service</a></li>
-                <li><a href="/services/ept-academy" className="block px-5 py-2 hover:text-[#a87c47]">EPT Academy</a></li>
-                <li><a href="/services/transition-support" className="block px-5 py-2 hover:text-[#a87c47]">Transition Support</a></li>
-                <li><a href="/services/notarization" className="block px-5 py-2 hover:text-[#a87c47]">Notarization</a></li>
+                <li><Link to="/services/visa-service" className="block px-5 py-2 hover:text-[#a87c47]">VISA Service</Link></li>
+                <li><Link to="/services/ept-academy" className="block px-5 py-2 hover:text-[#a87c47]">EPT Academy</Link></li>
+                <li><Link to="/services/transition-support" className="block px-5 py-2 hover:text-[#a87c47]">Transition Support</Link></li>
+                <li><Link to="/services/notarization" className="block px-5 py-2 hover:text-[#a87c47]">Notarization</Link></li>
               </ul>
             )}
           </li>
 
           <li>
-            <a href="/about" className={`${isActive("/about") ? "text-[#a87c47] font-semibold" : "hover:text-[#a87c47]"} transition`}>
+            <Link to="/about" className={`${isActive("/about") ? "text-[#a87c47] font-semibold" : "hover:text-[#a87c47]"} transition`}>
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/blog" className={`${isActive("/blog") ? "text-[#a87c47] font-semibold" : "hover:text-[#a87c47]"} transition`}>
+            <Link to="/blog" className={`${isActive("/blog") ? "text-[#a87c47] font-semibold" : "hover:text-[#a87c47]"} transition`}>
               Blogs
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/contact" className={`${isActive("/contact") ? "text-[#a87c47] font-semibold" : "hover:text-[#a87c47]"} transition`}>
+            <Link to="/contact" className={`${isActive("/contact") ? "text-[#a87c47] font-semibold" : "hover:text-[#a87c47]"} transition`}>
               Contact
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/checkout/no-items" className="hover:text-[#a87c47] transition">
+            <Link to="/checkout/no-items" className="hover:text-[#a87c47] transition">
               <IoBagCheckOutline size={22} />
-            </a>
+            </Link>
           </li>
         </ul>
 
@@ -91,9 +92,9 @@ const Navbar = () => {
         }`}
       >
         <div className="p-10 space-y-6 text-[16px] font-medium">
-          <a href="/" className={`block ${isActive("/") ? "text-[#a87c47] font-semibold" : "hover:text-[#a87c47]"}`}>
+          <Link to="/" className={`block ${isActive("/") ? "text-[#a87c47] font-semibold" : "hover:text-[#a87c47]"}`}>
             Home
-          </a>
+          </Link>
 
           {/* Services Dropdown - Mobile */}
           <div className="space-y-2">
@@ -105,26 +106,26 @@ const Navbar = () => {
             </button>
             {mobileDropdownOpen && (
               <div className="ml-2 mt-4 space-y-4 pl-2">
-                <a href="/services/visa-service" className="block hover:text-[#a87c47]">VISA Service</a>
-                <a href="/services/ept-academy" className="block hover:text-[#a87c47]">EPT Academy</a>
-                <a href="/services/transition-support" className="block hover:text-[#a87c47]">Transition Support</a>
-                <a href="/services/notarization" className="block hover:text-[#a87c47]">Notarization</a>
+                <Link to="/services/visa-service" className="block hover:text-[#a87c47]">VISA Service</Link>
+                <Link to="/services/ept-academy" className="block hover:text-[#a87c47]">EPT Academy</Link>
+                <Link to="/services/transition-support" className="block hover:text-[#a87c47]">Transition Support</Link>
+                <Link to="/services/notarization" className="block hover:text-[#a87c47]">Notarization</Link>
               </div>
             )}
           </div>
 
-          <a href="/about" className={`block ${isActive("/about") ? "text-[#a87c47] font-semibold" : "hover:text-[#a87c47]"}`}>
+          <Link to="/about" className={`block ${isActive("/about") ? "text-[#a87c47] font-semibold" : "hover:text-[#a87c47]"}`}>
             About
-          </a>
-          <a href="/blog" className={`block ${isActive("/blog") ? "text-[#a87c47] font-semibold" : "hover:text-[#a87c47]"}`}>
+          </Link>
+          <Link to="/blog" className={`block ${isActive("/blog") ? "text-[#a87c47] font-semibold" : "hover:text-[#a87c47]"}`}>
             Blogs
-          </a>
-          <a href="/contact" className={`block ${isActive("/contact") ? "text-[#a87c47] font-semibold" : "hover:text-[#a87c47]"}`}>
+          </Link>
+          <Link to="/contact" className={`block ${isActive("/contact") ? "text-[#a87c47] font-semibold" : "hover:text-[#a87c47]"}`}>
             Contact
-          </a>
-          <a href="/checkout/no-items" className="block hover:text-[#a87c47] flex items-center">
+          </Link>
+          <Link to="/checkout/no-items" className="block hover:text-[#a87c47] flex items-center">
             <IoBagCheckOutline size={20} className="mr-2" /> Cart
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

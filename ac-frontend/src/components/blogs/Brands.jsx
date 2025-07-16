@@ -29,11 +29,11 @@ const Brands = () => {
           </h1>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 justify-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
           {brandLogos.map((brand, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200 flex justify-center"
+              className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200 flex align-center justify-center"
               title={brand.name}
             >
               <img

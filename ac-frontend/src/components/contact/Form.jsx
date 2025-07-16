@@ -1,24 +1,36 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "@mui/material";
 import { FiSend } from "react-icons/fi";
+import { useLocation } from "react-router-dom";
 
 export default function ContactForm() {
+  const location = useLocation();
   const [activeTab, setActiveTab] = useState("form");
 
-  // Form field states
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [service, setService] = useState(""); // for select
+  const [service, setService] = useState("");
   const [message, setMessage] = useState("");
-
   const [isValid, setIsValid] = useState(false);
 
-  // Simple email regex for validation
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  // Validate fields whenever they change (except message, which is optional)
+  // 👇 Auto-switch to Book Appointment tab if URL hash is #appointment
+  useEffect(() => {
+    if (location.hash === "#appointment") {
+      setActiveTab("bookappointment");
+
+      setTimeout(() => {
+        const element = document.getElementById("appointment");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 300); // Delay to wait for rendering
+    }
+  }, [location]);
+
   useEffect(() => {
     const valid =
       firstName.trim() !== "" &&
@@ -42,7 +54,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="py-16 bg-gray-50">
+    <div className="py-16 bg-gray-50" id="appointment">
       <Container className="lg">
         {/* Toggle Tabs */}
         <div className="flex justify-center mb-6 gap-2.5">
@@ -62,7 +74,7 @@ export default function ContactForm() {
         </div>
 
         {/* Form or Appointment */}
-        <div className="bg-transparent m-2" id="appointment">
+        <div className="bg-transparent m-2">
           {activeTab === "form" ? (
             <div className="p-8 shadow-md rounded-2xl">
               <div className="mb-8 text-center">
@@ -70,7 +82,8 @@ export default function ContactForm() {
                   Send us a <span className="text-[#a87c47]">Message</span>
                 </h2>
                 <p className="text-gray-600 mt-3">
-                  We're here to assist you with any inquiries about our solutions.
+                  We're here to assist you with any inquiries about our
+                  solutions.
                 </p>
               </div>
 
@@ -79,7 +92,6 @@ export default function ContactForm() {
                 onSubmit={(e) => {
                   e.preventDefault();
                   if (isValid) {
-                    // handle form submit here
                     alert("Form submitted!");
                   }
                 }}
@@ -144,7 +156,7 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <label className="block text-md text-gray-700 font-medium mb-3">
-                     Select Service
+                      Select Service
                     </label>
                     <select
                       value={service}
@@ -171,7 +183,7 @@ export default function ContactForm() {
                   </label>
                   <textarea
                     rows={4}
-                    placeholder="Kindly provide any more information regarding your inquiry in order to better assist you..."
+                    placeholder="Kindly provide any more information regarding your inquiry..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     className="w-full border border-gray-200 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c89238]"

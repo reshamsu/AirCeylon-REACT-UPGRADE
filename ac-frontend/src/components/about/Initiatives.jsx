@@ -9,7 +9,7 @@ import officeIcon from "../../assets/office-building.png";
 
 const Initiatives = () => {
   return (
-    <div className="text-white px-4 py-20 bg-black/90">
+    <div className="text-white px-4 py-20 bg-black/90" id="initiatives">
       <div className="max-w-[1240px] mx-auto text-center">
         <p className="text-[#c89238] font-bold text-xl">CSR</p>
         <h1 className="md:text-5xl sm:text-4xl text-4xl font-bold my-4 px-4 pb-6">

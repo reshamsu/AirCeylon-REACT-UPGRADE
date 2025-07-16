@@ -42,15 +42,11 @@ const CoreValues = () => {
           {values.map((item, idx) => (
             <div
               key={idx}
-              className="bg-[#1e2a4d] border border-gray-800 rounded-2xl shadow-md p-8 hover:shadow-xl transition flex flex-col items-center justify-around text-center"
+              className="bg-[#1c2746] shadow-lg rounded-xl p-8 hover:scale-105 transition-transform ease-in-out duration-300 flex flex-col items-center justify-center"
             >
               <div className="mb-4">{item.icon}</div>
-              <h2 className="text-2xl text-white font-bold mb-4">
-                {item.title}
-              </h2>
-              <p className="text-sm text-gray-400 leading-relaxed">
-                {item.description}
-              </p>
+              <h2 className="text-2xl text-white font-bold mb-4">{item.title}</h2>
+              <p className="text-sm text-gray-400 leading-relaxed">{item.description}</p>
             </div>
           ))}
         </div>

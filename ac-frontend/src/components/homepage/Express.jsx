@@ -25,7 +25,6 @@ const expressOptions = [
   },
 ];
 
-// Course options with prices
 const courseOptions = [
   { label: "COURSE ZERO (FREE) – 20 SESSIONS", value: "Course ZERO", price: 0 },
   { label: "CRASH COURSE – 5 SESSIONS", value: "Crash Course", price: 25000 },
@@ -37,7 +36,7 @@ const courseOptions = [
   { label: "PRO COURSE – 20 SESSIONS", value: "Pro Course", price: 100000 },
 ];
 
-const registrationFee = 10000; // Fixed registration fee
+const registrationFee = 10000;
 
 const Express = () => {
   const navigate = useNavigate();
@@ -62,18 +61,15 @@ const Express = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Find selected course to get price
     const course = courseOptions.find((c) => c.value === selectedCourse);
     if (!course) return;
 
-    // Calculate total price
     const totalPrice = registrationFee + course.price;
 
-    // Prepare payload with name and price matching Checkout expectations
     const payload = {
       ...form,
-      name: course.label,        // For Checkout: display course name
-      price: totalPrice,         // For Checkout: total price
+      name: course.label,
+      price: totalPrice,
       course: course.value,
       courseLabel: course.label,
       coursePrice: course.price,
@@ -81,10 +77,8 @@ const Express = () => {
       totalPrice,
     };
 
-    // Navigate to checkout with product payload
     navigate("/checkout/add-items", { state: { product: payload } });
 
-    // Reset states
     setOpenDialog(false);
     setShowForm(false);
     setSelectedCourse(null);
@@ -140,7 +134,6 @@ const Express = () => {
         </div>
       </div>
 
-      {/* Dialog Section */}
       {openDialog && (
         <div className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm flex justify-center items-center px-4">
           <div className="bg-white max-w-md w-full rounded-xl shadow-xl p-8 relative">
@@ -189,7 +182,8 @@ const Express = () => {
             ) : (
               <>
                 <h3 className="text-lg font-semibold text-gray-800 mb-6">
-                  Register for <span className="text-[#a87c47]">{selectedCourse}</span>
+                  Register for{" "}
+                  <span className="text-[#a87c47]">{selectedCourse}</span>
                 </h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <label

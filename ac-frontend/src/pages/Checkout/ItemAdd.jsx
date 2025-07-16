@@ -9,36 +9,33 @@ const Checkout = () => {
   const navigate = useNavigate();
   const product = location.state?.product;
 
-  // Redirect safely if no product
+  // Redirect if no product passed
   useEffect(() => {
     if (!product) {
       navigate("/checkout/no-items");
     }
   }, [product, navigate]);
 
-  if (!product) {
-    return null;
-  }
+  if (!product) return null;
 
-  // Check if course is "Course ZERO" (case sensitive)
-  const isFreeCourse = product.name === "Course ZERO";
+  // Check if course is free by value or by name
+  // Defensive fallback: use course or name for check
+  const isFreeCourse =
+    product.course === "Course ZERO" || product.name === "COURSE ZERO (FREE) – 20 SESSIONS";
 
-  // Course fee number (0 if free course, else product.coursePrice or fallback)
+  // Extract course fee number safely
   const courseFeeNumber = isFreeCourse
     ? 0
-    : Number(product.coursePrice) || 0;
+    : Number(product.coursePrice ?? 0);
 
-  // Registration fee is always fixed
   const registrationFee = FIXED_REGISTRATION_FEE;
 
-  // Subtotal = registration fee + course fee
   const subtotal = registrationFee + courseFeeNumber;
 
-  // Total price fallback logic
-  const totalPrice =
-    Number(product.totalPrice) || subtotal || Number(product.price) || 0;
+  // totalPrice sent from Express or fallback to subtotal
+  const totalPrice = Number(product.totalPrice ?? subtotal);
 
-  // Formatting helper to add commas and no decimals
+  // Formatting function for price display
   const formatPrice = (num) =>
     num.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
 
@@ -75,9 +72,7 @@ const Checkout = () => {
               <div className="flex justify-between py-3 border-b border-gray-200">
                 <span>Course Fee</span>
                 <span>
-                  {isFreeCourse
-                    ? "Free"
-                    : `LKR ${formatPrice(courseFeeNumber)}`}
+                  {isFreeCourse ? "Free" : `LKR ${formatPrice(courseFeeNumber)}`}
                 </span>
               </div>
 
