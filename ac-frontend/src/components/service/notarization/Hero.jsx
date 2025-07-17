@@ -4,7 +4,7 @@ import hero from "../../../assets/notarization-section.jpg";
 
 const Hero = () => {
   return (
-    <div className="relative w-full text-white">
+    <div className="relative w-full text-white bg-gray-200">
       <div className="absolute inset-0">
         <img src={hero} className="w-full h-full object-cover brightness-40" />
       </div>

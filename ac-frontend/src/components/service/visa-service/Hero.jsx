@@ -7,7 +7,7 @@ const Hero = () => {
     <>
       <SubNavbar />
 
-      <div className="relative w-full text-white">
+      <div className="relative w-full text-white bg-gray-200">
         <div className="absolute inset-0">
           <img
             src={hero}
