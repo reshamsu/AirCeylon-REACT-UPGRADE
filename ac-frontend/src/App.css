@@ -2303,7 +2303,7 @@ textarea {
 } */
 
 /* Footer Content */
-footer {
+/* footer {
   background-color: whitesmoke;
   padding: 1.4rem 8%;
 }
@@ -2463,7 +2463,7 @@ footer .footer-content .rights svg {
 footer .footer-content .rights a {
   color: var(--text-gold-hover);
   font-weight: 700;
-}
+} */
 
 /* Mobile Responsive */
 /* @media (max-width: 480px) {
