@@ -48,7 +48,7 @@ const Checkout = () => {
       <Container maxWidth="lg">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           {/* Left Section */}
-          <div>
+          <div className="text-center md:text-start">
             <h1 className="text-2xl font-bold text-black">
               SHOPPING <span className="text-[#a87c47]">CART</span>
             </h1>
