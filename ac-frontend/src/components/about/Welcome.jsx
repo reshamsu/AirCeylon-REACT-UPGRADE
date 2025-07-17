@@ -4,7 +4,7 @@ import about from "../../assets/aboutus.png";
 const Welcome = () => {
   return (
     <div className="bg-[linen] text-black py-16 overflow-hidden">
-      <div className="max-w-[1240px] mx-auto flex flex-col lg:flex-row items-center justify-between px-8 gap-12">
+      <div className="max-w-[1240px] mx-auto flex flex-col-reverse lg:flex-row items-center justify-between px-8 gap-12">
         <div className="flex-1 text-center lg:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold mb-4">
             About <span className="text-[#a87c47]">Us</span>
@@ -41,7 +41,7 @@ const Welcome = () => {
           <img
             src={about}
             alt="About Air Ceylon"
-            className="w-full max-w-md mx-auto rounded-lg shadow-md"
+            className="w-full max-w-md mx-auto"
           />
         </div>
       </div>

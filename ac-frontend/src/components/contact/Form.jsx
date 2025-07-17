@@ -55,7 +55,7 @@ export default function ContactForm() {
 
   return (
     <div className="py-16 bg-gray-50" id="appointment">
-      <Container className="lg">
+      <Container maxWidth="lg">
         {/* Toggle Tabs */}
         <div className="flex justify-center mb-6 gap-2.5">
           {tabButtons.map((tab) => (
@@ -74,7 +74,7 @@ export default function ContactForm() {
         </div>
 
         {/* Form or Appointment */}
-        <div className="bg-transparent m-2">
+        <div className="bg-white m-2">
           {activeTab === "form" ? (
             <div className="p-8 shadow-md rounded-2xl">
               <div className="mb-8 text-center">

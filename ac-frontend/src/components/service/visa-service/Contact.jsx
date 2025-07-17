@@ -34,7 +34,7 @@ const VisaContact = () => {
   }, [firstName, lastName, email, phone, country, adults, children]);
 
   return (
-    <div className="bg-white text-black px-4 py-16 flex flex-col">
+    <div className="bg-gray-50 text-black px-4 py-16 flex flex-col">
       <Container maxWidth="lg" className="text-center mb-12">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
           VISA <span className="text-[#a87c47]">Application Form.</span>
@@ -44,8 +44,8 @@ const VisaContact = () => {
         </p>
       </Container>
 
-      <Container maxWidth="md">
-        <div className="bg-gray-50 shadow-lg rounded-xl p-8">
+      <Container maxWidth="lg">
+        <div className="bg-white shadow-lg rounded-xl p-8">
           <div className="mb-8 text-center">
             <h2 className="text-2xl font-bold mb-2">VISA Service Form</h2>
             <p className="text-gray-600">Fill in the form below to start your application.</p>
