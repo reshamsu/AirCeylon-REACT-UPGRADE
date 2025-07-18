@@ -47,6 +47,7 @@ const Express = () => {
     firstName: "",
     lastName: "",
     email: "",
+    phone: "",
     file: null,
   });
 
@@ -232,6 +233,22 @@ const Express = () => {
                     pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$"
                     className="w-full border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:border-[#a87c47]"
                     value={form.email}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <label
+                    htmlFor="phone"
+                    className="block mb-2 font-semibold tracking-wide text-sm"
+                  >
+                    Phone Number
+                  </label>
+                  <input
+                    id="phone"
+                    type="tel"
+                    name="phone"
+                    placeholder="+94XXXXXXXXX"
+                    className="w-full border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:border-[#a87c47]"
+                    value={form.phone}
                     onChange={handleInputChange}
                     required
                   />
