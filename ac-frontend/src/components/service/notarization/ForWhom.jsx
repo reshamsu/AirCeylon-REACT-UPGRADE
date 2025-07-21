@@ -41,13 +41,13 @@ const ToWhom = () => {
             <img
               src={item.image}
               alt={item.title}
-              className="w-full h-64 object-cover transition duration-300 group-hover:brightness-110"
+              className="w-full h-64 object-cover transition duration-300 group-hover:brightness-105"
             />
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-opacity-60 z-10 flex flex-col justify-between p-6">
-              <img src={leafIcon} alt="Leaf Icon" className="w-8 h-8" />
-              <h2 className="text-black text-lg font-bold  mt-auto">
+            <div className="absolute inset-0 bg-black/50 z-10 flex flex-col justify-between p-6">
+              <img src={leafIcon} alt="Leaf Icon" className="w-10 h-10" />
+              <h2 className="text-white text-lg font-semibold mt-auto">
                 {item.title}
               </h2>
             </div>
