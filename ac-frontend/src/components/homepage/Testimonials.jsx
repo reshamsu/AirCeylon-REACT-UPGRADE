@@ -32,11 +32,11 @@ const Testimonials = () => {
           </h1>
         </div>
 
-        <div className="grid gap-10 md:grid-cols-3 m-6">
+        <div className="grid gap-10 md:grid-cols-3 m-4">
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className="bg-gray-100 backdrop-blur-sm rounded-2xl shadow-lg p-6 flex flex-col justify-between gap-4 hover:shadow-md transition"
+              className="bg-gray-50 backdrop-blur-sm rounded-2xl shadow-lg p-8 flex flex-col justify-between gap-4 hover:shadow-md transition"
             >
               <p className="text-lg font-semibold tracking-wide">
                 {item.label}

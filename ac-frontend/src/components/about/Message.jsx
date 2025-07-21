@@ -6,7 +6,7 @@ const Message = () => {
   return (
     <div className="bg-[linen] text-gray-900 py-16 px-4">
       <div className="max-w-[1240px] mx-auto px-4">
-        <div className="bg-gray-100 rounded-2xl shadow-md p-8 md:p-12">
+        <div className="bg-gray-50 rounded-2xl shadow-md p-8 md:p-12">
           <div className="text-md md:text-md space-y-4 relative">
             <p className="text-[#a87c47] font-bold text-lg">
               <FaQuoteLeft className="inline-block mr-3 mb-1" size={24}/>

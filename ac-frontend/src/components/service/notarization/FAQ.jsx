@@ -37,11 +37,11 @@ const FAQ = () => {
   const toggleFAQ = (index) => setOpenIndex(openIndex === index ? null : index);
 
   return (
-    <div className="bg-[linen] text-gray-900 py-16 px-4" id="faq">
-      <Container maxWidth="md">
+    <div className="bg-gray-100 text-gray-900 py-16 px-4" id="faq">
+      <Container maxWidth="lg">
         <div className="text-center mb-10">
           <p className="text-[#a87c47] font-bold text-xl uppercase tracking-wider">
-            FAQ
+            SUPPORT
           </p>
           <h1 className="text-3xl sm:text-4xl font-bold py-4">
             Frequently Asked <span className="text-[#a87c47]">Questions</span>

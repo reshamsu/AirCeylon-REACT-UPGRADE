@@ -28,7 +28,7 @@ const procedureSteps = [
 
 const Breakdown = () => {
   return (
-    <section className="bg-white text-black py-16 p-8" id="pricing">
+    <section className="bg-white text-black py-14 p-6" id="pricing">
       <div className="max-w-[900px] mx-auto">
         <div className="text-center mb-10">
           <p className="text-[#a87c47] font-bold text-lg mb-2">BREAKDOWN</p>
@@ -38,7 +38,7 @@ const Breakdown = () => {
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full border border-gray-300 rounded-lg overflow-hidden text-left text-sm">
+          <table className="w-full border border-gray-300 rounded-lg overflow-hidden text-left text-xs">
             <thead className="bg-[#a87c47] text-white">
               <tr>
                 <th className="p-3">Description</th>
@@ -52,7 +52,7 @@ const Breakdown = () => {
                     key={`step-${index}`}
                     className="bg-gray-100 font-semibold"
                   >
-                    <td colSpan={2} className="p-3 text-[#a87c47] uppercase">
+                    <td colSpan={2} className="p-2 text-[#a87c47] uppercase">
                       {item.step}
                     </td>
                   </tr>

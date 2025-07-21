@@ -23,7 +23,7 @@ const Sustainability = () => {
   ];
 
   return (
-    <div className="text-gray-800 px-4 py-20 bg-gray-100">
+    <div className="text-gray-800 px-4 py-20 bg-gray-50">
       <div className="max-w-[900px] mx-auto text-center">
         <p className="text-[#a87c47] font-bold text-xl">CSR</p>
         <h1 className="md:text-5xl sm:text-4xl text-3xl font-bold my-4 pb-4">
